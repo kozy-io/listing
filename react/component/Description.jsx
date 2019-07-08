@@ -92,7 +92,7 @@ class Description extends React.Component{
                 </div>
                 <div id='linemg'>
                         <div id='line'></div>
-                    </div>
+                </div>
                 <div id='descs'>
                     
                 { desc &&
@@ -124,6 +124,9 @@ class Description extends React.Component{
                         </div>
                     </div>
                 }
+                </div>
+                <div id='linemg'>
+                    <div id='line'></div>
                 </div>
                 <div id='roomarrg'>
                     <h2>Sleeping arrangements</h2>

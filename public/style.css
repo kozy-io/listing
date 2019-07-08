@@ -74,7 +74,7 @@ html,body {
 }
 #line{
     width: 90%;
-    border:1px #EBEBEB solid;
+    border:0.5px #EBEBEB solid;
 }
 #descs{
     width: 90%;
@@ -181,8 +181,7 @@ html,body {
 }
 #bedinroom{
     margin: 0px ;
-    
     font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif ;
     font-size: 16px ;
-    font-weight: 400 ;
+    font-weight: 300 ;
 }
