@@ -1,6 +1,6 @@
 html,body {
    width: 100%;
-   height: 100%;
+   height: 1200px;
    background-color: #fff;
    
 }
@@ -155,16 +155,34 @@ html,body {
     position: relative;
 }
 #brarrg{
-    width: 33.333333333333336% !important;
-    height: 147px !important;
+    width: 33.33333333334%;
+   
     padding: 24px;
     margin-left: 8px;
     margin-right: 8px;
     border: 1px solid #EBEBEB;
     border-radius: 4px;
-    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
-    font-size: 16px !important;
-    font-weight: 600 !important;
-    line-height: 1.375em !important;
-    color: #484848
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif ;
+    font-size: 16px ;
+    font-weight: 600 ;
+    line-height: 1.375em ;
+    color: #484848;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between
+}
+#brarrg svg{
+    width: 24px;
+    height: 24px;
+    margin-bottom: 24px;
+}
+#brtext{
+    margin: 0;
+}
+#bedinroom{
+    margin: 0px ;
+    
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif ;
+    font-size: 16px ;
+    font-weight: 400 ;
 }
