@@ -6,7 +6,7 @@ class Description extends React.Component{
         this.state={
             // showreadmorediv: true,
             showmoredesc: false,
-            linkdecoration: false
+           
         }
     }
     readmoredesc(){
@@ -19,16 +19,7 @@ class Description extends React.Component{
             showmoredesc: false
         })
     }
-    addUnderLine(){
-        this.setState({
-            linkdecoration: true
-        })
-    }
-    removeUnderLine(){
-        this.setState({
-            linkdecoration: false
-        })
-    }
+    
     render(){
         // console.log('location',this.props.location);
         
@@ -53,7 +44,7 @@ class Description extends React.Component{
             )
         }
         var displaydesc = {display: this.state.showmoredesc ? 'block': 'none'}
-        var displayunderline = {textDecoration: this.state.linkdecoration ? 'underline' : 'none'}
+        
         return(
             <div>
                 <div id='summary'>
@@ -94,8 +85,8 @@ class Description extends React.Component{
                         <div id='generaldesc'>
                              <p id='desccontent'>{desc['General']}</p>
                         </div>
-                        <div id='readmore' onClick={e=>this.readmoredesc()} onMouseEnter={e=>this.addUnderLine()} onMouseLeave={e=>this.removeUnderLine()}>
-                            <div style={displayunderline}>Read more about this space</div>
+                        <div id='readmore' onClick={e=>this.readmoredesc()} >
+                            <div >Read more about this space</div>
                         </div>
                         <div id='readmorearea' style={displaydesc}>
                             <div>
@@ -106,14 +97,14 @@ class Description extends React.Component{
                                     </div>
                                     )}
                             </div>
-                            <div id='fakedesclink' onMouseEnter={e=>this.addUnderLine()} onMouseLeave={e=>this.removeUnderLine()} >
-                                <div style={displayunderline}>Learn about this number</div>
+                            <div id='fakedesclink' >
+                                <div >Learn about this number</div>
                             </div>
-                            <div id='readless' onClick={e=>this.readlessdesc()} onMouseEnter={e=>this.addUnderLine()} onMouseLeave={e=>this.removeUnderLine()}>
-                                <div style={displayunderline}>Hide</div>
+                            <div id='readless' onClick={e=>this.readlessdesc()} >
+                                <div >Hide</div>
                             </div>
-                            <div id='fakedesclink' onMouseEnter={e=>this.addUnderLine()} onMouseLeave={e=>this.removeUnderLine()} >
-                                <div style={displayunderline}>Contact host</div>
+                            <div id='fakedesclink' >
+                                <div >Contact host</div>
                             </div>
                         </div>   
                     </div>

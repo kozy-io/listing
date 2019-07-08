@@ -91,6 +91,9 @@ html,body {
     cursor: pointer;
     text-decoration: none;
 }
+#readmore:hover, #readless:hover, #fakedesclink:hover{
+    text-decoration: underline;
+}
 
 #desctitle{
     margin: 0px ;
