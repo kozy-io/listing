@@ -1,0 +1,170 @@
+html,body {
+   width: 100%;
+   height: 100%;
+   background-color: #fff;
+   
+}
+#title{
+    color: #484848;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 1.123em;
+    padding-top: 6px;
+    padding-bottom: 6px
+}
+#location{
+    word-wrap: break-word ;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.375em;
+    color: #484848 ;
+}
+#summary{
+    width: 90%;
+    height: 240px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#tilo{
+    display: flex;
+    flex-direction: column;
+}
+#host div{
+ text-align: center
+}
+#host img{
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+}
+#hls{
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+    font-size: 14px;
+    line-height: 1.43;
+    color: #484848;
+    background-color: #fff;
+    margin: 0;
+    margin-top: 20px
+}
+#hltitle{
+    margin: 0px ;
+    word-wrap: break-word ;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif ;
+    font-size: 16px ;
+    font-weight: 600 ;
+    line-height: 1.375em ;
+    color: #484848 ;
+    margin-bottom: 16px;
+}
+#hlcontent{
+    margin: 0px ;
+    word-wrap: break-word ;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+    font-size: 16px ;
+    font-weight: 400 ;
+    line-height: 1.375em ;
+    color: #484848;
+}
+#linemg{
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+#line{
+    width: 90%;
+    border:1px #EBEBEB solid;
+}
+#descs{
+    width: 90%;
+    margin-top: 20px;
+}
+#readmore{
+    margin-top: 8px;
+    margin-bottom: 24px;
+    color: #008489;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.375em;
+    cursor: pointer;
+    text-decoration: none;
+}
+#readmore:hover, #readless:hover, #fakedesclink:hover{
+    text-decoration: underline;
+}
+
+#desctitle{
+    margin: 0px ;
+    word-wrap: break-word ;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif ;
+    font-size: 16px ;
+    font-weight: 600 ;
+    line-height: 1.375em;
+    color: #484848;
+    margin-bottom:  8px;
+}
+#descs p{
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif ;
+    font-size: 16px ;
+    font-weight: 400 ;
+    line-height: 1.375em ;
+    color: #484848;
+}
+#readless{
+    margin-top: 8px;
+    margin-bottom: 24px;
+    color: #008489;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.375em;
+    cursor: pointer;
+    text-decoration: none;
+}
+#fakedesclink{
+    margin-top: 0px;
+    margin-bottom: 24px;
+    color: #008489;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.375em;
+    cursor: pointer;
+    text-decoration: none;
+}
+#roomarrg{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+#roomarrg h2{
+    margin: 0px ;
+    margin-bottom: 16px;
+    word-wrap: break-word ;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif ;
+    font-size: 16px ;
+    font-weight: 800 ;
+    line-height: 1.375em ;
+    color: #484848 ;
+}
+#arrgarea{
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+}
+#brarrg{
+    width: 33.333333333333336% !important;
+    height: 147px !important;
+    padding: 24px;
+    margin-left: 8px;
+    margin-right: 8px;
+    border: 1px solid #EBEBEB;
+    border-radius: 4px;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    line-height: 1.375em !important;
+    color: #484848
+}
