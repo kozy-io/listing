@@ -20,11 +20,6 @@ class Description extends React.Component{
             showmoredesc: false
         })
     }   
-    // showarrow(){
-    //     this.setState({
-    //         showscrolltonext: true
-    //     })
-    // }
     getnext(){
         this.setState({
             move: this.state.move-(100/3)
@@ -32,7 +27,7 @@ class Description extends React.Component{
     }
     getpre(){
         this.setState({
-            move: this.state.move-(100/3)
+            move: this.state.move+(100/3)
         })
     }
     render(){
@@ -182,8 +177,10 @@ class Description extends React.Component{
                                 </button>
                             </span>
                         </div>
-                        <div id='arrgarea' style={movestyle}>
-                            {arrgs}
+                        <div id='arrg'>
+                            <div id='arrgarea' style={movestyle}>
+                                {arrgs}
+                            </div>
                         </div>
                         <div id='btn-next' onClick={e=>this.getnext()}>
                             <span>

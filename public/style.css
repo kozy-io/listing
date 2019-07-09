@@ -199,12 +199,16 @@ html,body {
     line-height: 1.375em ;
     color: #484848 ;
 }
+#arrg{
+    width: 100%;
+    overflow: hidden;
+}
 #arrgarea{
     display: flex;
     justify-content: flex-start;
     position: relative;
     height: 147px;
-    overflow: hidden;
+    overflow: visible;
     width: 100%;
 }
 #brarrg{
@@ -223,9 +227,7 @@ html,body {
     flex-direction: column;
     justify-content: space-between;
 }
-#brarrg:first-child{
-    margin-left: 0;
-}
+
 #brarrg svg{
     width: 24px;
     height: 24px;
@@ -246,17 +248,19 @@ html,body {
     align-items: center;
     position: relative;
     z-index: 0;
+    margin-left: -8px;
+    margin-right: -8px;
 }
 #btn-next{
     position: absolute;
-    right: -15px;
+    right: -8px;
     transform: translateY(-50%);
     z-index: 1;
     transform: rotate(270deg);
 }
 #btn-pre{
     position: absolute;
-    left: -15px;
+    left: -8px;
     transform: translateY(-50%);
     z-index: 1;
     transform: rotate(90deg);
