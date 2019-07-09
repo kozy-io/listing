@@ -6,7 +6,8 @@ class Description extends React.Component{
         this.state={
             // showreadmorediv: true,
             showmoredesc: false,   
-            showscrolltonext: false        
+            showscrolltonext: false,
+            move: 0,   
         }
     }
     readmoredesc(){
@@ -19,9 +20,19 @@ class Description extends React.Component{
             showmoredesc: false
         })
     }   
-    showarrow(){
+    // showarrow(){
+    //     this.setState({
+    //         showscrolltonext: true
+    //     })
+    // }
+    getnext(){
         this.setState({
-            showscrolltonext: true
+            move: this.state.move-(100/3)
+        })
+    }
+    getpre(){
+        this.setState({
+            move: this.state.move+(100/3)
         })
     }
     render(){
@@ -62,11 +73,10 @@ class Description extends React.Component{
         }
         var displaydesc = {display: this.state.showmoredesc ? 'block': 'none'}
         var displayshowmore = {display: this.state.showmoredesc ? 'none': 'flex'}
-        var arrowdown = 'm16.29 4.3a1 1 0 1 1 1.41 1.42l-8 8a1 1 0 0 1 -1.41 0l-8-8a1 1 0 1 1 1.41-1.42l7.29 7.29z'
-        var arrowup = 'm16.29 4.3a1 1 0 1 1 1.41 1.42l-8 8a1 1 0 0 1 -1.41 0l-8-8a1 1 0 1 1 1.41-1.42l7.29 7.29z'
-        if(br>3){
-            showarrow()
-        }
+        // var displaynextarr = {display:this.state.showscrolltonext? 'block':'none'}
+        var arrow = 'm16.29 4.3a1 1 0 1 1 1.41 1.42l-8 8a1 1 0 0 1 -1.41 0l-8-8a1 1 0 1 1 1.41-1.42l7.29 7.29z'
+        var movestyle = {transform: `translateX(${this.state.move}%)`}
+        
         return(
             <div id='main'>
                 <div id='summary'>
@@ -115,7 +125,7 @@ class Description extends React.Component{
                         <div id='readmore' onClick={e=>this.readmoredesc()} style={displayshowmore}>
                             <div >Read more about this space</div>
                             <svg viewBox={'0 0 18 18'} role={'presentation'} focusable={'false'}  >
-                                <path d={arrowdown} fill-rule={"evenodd"} ></path>
+                                <path d={arrow} fill-rule={"evenodd"} ></path>
                             </svg>
                         </div>
                         <div id='readmorearea' style={displaydesc}>
@@ -133,7 +143,7 @@ class Description extends React.Component{
                             <div id='readless' onClick={e=>this.readlessdesc()} >
                                 <div >Hide</div>
                                 <svg viewBox={'0 0 18 18'} role={'presentation'} focusable={'false'} >
-                                    <path d={arrowup} fill-rule={"evenodd"} ></path>
+                                    <path d={arrow} fill-rule={"evenodd"} ></path>
                                 </svg>
                             </div>                           
                         </div>   
@@ -148,8 +158,28 @@ class Description extends React.Component{
                 </div>
                 <div id='roomarrg'>
                     <h2>Sleeping arrangements</h2>
-                    <div id='arrgarea'>
-                        {arrgs}
+                    <div id='arrgline'>
+                        <div id='btn-pre' onClick={e=>this.getpre()}>
+                            <span>
+                                <button type={"button"}>
+                                    <svg viewBox={'0 0 18 18'} role={'presentation'} focusable={'false'}  >
+                                        <path d={arrow} fill-rule={"evenodd"} ></path>
+                                    </svg>
+                                </button>
+                            </span>
+                        </div>
+                        <div id='arrgarea' style={movestyle}>
+                            {arrgs}
+                        </div>
+                        <div id='btn-next' onClick={e=>this.getnext()}>
+                            <span>
+                                <button type={"button"}>
+                                    <svg viewBox={'0 0 18 18'} role={'presentation'} focusable={'false'}  >
+                                        <path d={arrow} fill-rule={"evenodd"} ></path>
+                                    </svg>
+                                </button>
+                            </span>
+                        </div>
                     </div>
                 </div>
                

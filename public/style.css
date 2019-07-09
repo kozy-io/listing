@@ -5,8 +5,12 @@ html,body {
    
 }
 #main{
-    margin-left: 24px;
-    margin-right: 24px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    max-width: 696px;
+    padding-right: 24px;
+    padding-left: 24px;
 }
 #title{
     color: #484848;
@@ -163,7 +167,7 @@ html,body {
 #roomarrg{
     display: flex;
     flex-direction: column;
-    width: 90%;
+    width: 100%;
 }
 #roomarrg h2{
     margin: 0px ;
@@ -180,9 +184,11 @@ html,body {
     justify-content: flex-start;
     position: relative;
     height: 147px;
+    overflow: hidden;
+    width: 100%
 }
 #brarrg{
-    width: 33.33333333334%;
+    width: 33.33% !important;
     padding: 24px;
     margin-left: 8px;
     margin-right: 8px;
@@ -195,7 +201,7 @@ html,body {
     color: #484848;
     display: flex;
     flex-direction: column;
-    justify-content: space-between
+    justify-content: space-between;
 }
 #brarrg:first-child{
     margin-left: 0;
@@ -214,3 +220,49 @@ html,body {
     font-size: 16px ;
     font-weight: 300 ;
 }
+#arrgline{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    z-index: 0;
+}
+#btn-next{
+    position: absolute;
+    right: -15px;
+    transform: translateY(-50%);
+    z-index: 1;
+    transform: rotate(270deg);
+}
+#btn-pre{
+    position: absolute;
+    left: -15px;
+    transform: translateY(-50%);
+    z-index: 1;
+    transform: rotate(90deg);
+}
+
+#btn-next span, #btn-pre span{
+    top:50%
+}
+#btn-next button, #btn-pre button{ 
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    line-height: 1;
+    border-radius: 50%;
+    position: relative;
+    touch-action: manipulation;
+    box-shadow: rgba(0, 0, 0, 0.14) 0px 1px 1px 1px;
+    border: 2px solid transparent;
+    background-color: #fff
+}
+#btn-next svg, #btn-pre svg{
+    width: 10px;
+    height: 10px;   
+    display: inline-block;
+    fill:currentColor
+}
+    
