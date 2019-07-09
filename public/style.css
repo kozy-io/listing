@@ -185,10 +185,12 @@ html,body {
     position: relative;
     height: 147px;
     overflow: hidden;
-    width: 100%
+    width: 100%;
+    margin-left: -8px;
+    margin-right: -8px;
 }
 #brarrg{
-    width: 33.33% !important;
+    width: 33.33%;
     padding: 24px;
     margin-left: 8px;
     margin-right: 8px;
