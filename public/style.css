@@ -190,7 +190,9 @@ html,body {
     margin-right: -8px;
 }
 #brarrg{
-    width: 33.33%;
+    width: 33.333333333333336%;
+    display: inline-block;
+    vertical-align: top;
     padding: 24px;
     margin-left: 8px;
     margin-right: 8px;
