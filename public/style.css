@@ -1,8 +1,16 @@
 html,body {
    width: 100%;
-   height: 100%;
+   height: 1200px;
    background-color: #fff;
    
+}
+#main{
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    max-width: 696px;
+    padding-right: 24px;
+    padding-left: 24px;
 }
 #title{
     color: #484848;
@@ -22,7 +30,7 @@ html,body {
     color: #484848 ;
 }
 #summary{
-    width: 90%;
+    width: 100%;
     height: 240px;
     display: flex;
     justify-content: space-between;
@@ -73,12 +81,18 @@ html,body {
     margin-bottom: 24px;
 }
 #line{
-    width: 90%;
-    border:1px #EBEBEB solid;
+    width: 100%;
+    border:0.5px #EBEBEB solid;
 }
 #descs{
-    width: 90%;
+    width: 100%;
     margin-top: 20px;
+}
+#generaldesc{
+    margin-bottom: 14px;
+}
+#desctitle:last-child{
+    margin-bottom: 0;
 }
 #readmore{
     margin-top: 8px;
@@ -90,11 +104,27 @@ html,body {
     line-height: 1.375em;
     cursor: pointer;
     text-decoration: none;
+    flex-direction: row;
+    align-items: center;
 }
 #readmore:hover, #readless:hover, #fakedesclink:hover{
     text-decoration: underline;
 }
-
+#readless{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+#readmore svg, #readless svg{
+    width: 10px;
+    height: 10px;
+    margin-left: 8px;
+    display: block;
+    fill: currentColor
+}
+#readless svg{
+    transform: rotate(180deg)
+}
 #desctitle{
     margin: 0px ;
     word-wrap: break-word ;
@@ -137,7 +167,7 @@ html,body {
 #roomarrg{
     display: flex;
     flex-direction: column;
-    width: 90%;
+    width: 100%;
 }
 #roomarrg h2{
     margin: 0px ;
@@ -153,18 +183,88 @@ html,body {
     display: flex;
     justify-content: flex-start;
     position: relative;
+    height: 147px;
+    overflow: hidden;
+    width: 100%;
+    margin-left: -8px;
+    margin-right: -8px;
 }
 #brarrg{
-    width: 33.333333333333336% !important;
-    height: 147px !important;
+    width: 33.33%;
     padding: 24px;
     margin-left: 8px;
     margin-right: 8px;
     border: 1px solid #EBEBEB;
     border-radius: 4px;
-    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
-    font-size: 16px !important;
-    font-weight: 600 !important;
-    line-height: 1.375em !important;
-    color: #484848
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif ;
+    font-size: 16px ;
+    font-weight: 600 ;
+    line-height: 1.375em ;
+    color: #484848;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
+#brarrg:first-child{
+    margin-left: 0;
+}
+#brarrg svg{
+    width: 24px;
+    height: 24px;
+    margin-bottom: 24px;
+}
+#brtext{
+    margin: 0;
+}
+#bedinroom{
+    margin: 0px ;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif ;
+    font-size: 16px ;
+    font-weight: 300 ;
+}
+#arrgline{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    z-index: 0;
+}
+#btn-next{
+    position: absolute;
+    right: -15px;
+    transform: translateY(-50%);
+    z-index: 1;
+    transform: rotate(270deg);
+}
+#btn-pre{
+    position: absolute;
+    left: -15px;
+    transform: translateY(-50%);
+    z-index: 1;
+    transform: rotate(90deg);
+}
+
+#btn-next span, #btn-pre span{
+    top:50%
+}
+#btn-next button, #btn-pre button{ 
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    line-height: 1;
+    border-radius: 50%;
+    position: relative;
+    touch-action: manipulation;
+    box-shadow: rgba(0, 0, 0, 0.14) 0px 1px 1px 1px;
+    border: 2px solid transparent;
+    background-color: #fff
+}
+#btn-next svg, #btn-pre svg{
+    width: 10px;
+    height: 10px;   
+    display: inline-block;
+    fill:currentColor
+}
+    
