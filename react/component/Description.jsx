@@ -20,11 +20,6 @@ class Description extends React.Component{
             showmoredesc: false
         })
     }   
-    // showarrow(){
-    //     this.setState({
-    //         showscrolltonext: true
-    //     })
-    // }
     getnext(){
         this.setState({
             move: this.state.move-(100/3)
@@ -88,7 +83,7 @@ class Description extends React.Component{
                         { host &&
                             <div >
                                 <img src={host.pic}></img>
-                                <div>{host.name}</div>   
+                                <div id='hostname'>{host.name}</div>   
                             </div>
                         } 
                     </div>                  
@@ -97,12 +92,26 @@ class Description extends React.Component{
                     { highlights &&
                         <div>
                             {Object.keys(highlights).map(hl=>
-                                <div>
+                                <div id='hl'>
                                     <div id='hlicon'>
-                                        {/* {hl.includes('house') && 
-                                            <img src={path.resolve(__dirname,"../../../house.png")}></img>
-                                        }                               */}
-                                        
+                                        {(hl.includes('house')||hl.includes('room')||hl.includes('apartment')) && 
+                                            <img src={"./house.png"}></img>
+                                        }    
+                                        {hl.includes('Self') && 
+                                            <img src={"./easy-chkin.png"}></img>
+                                        }   
+                                        {hl.includes('experience') && 
+                                            <img src={"./gt-chkin.png"}></img>
+                                        }       
+                                        {hl.includes('Superhost') && 
+                                            <img src={"./superhost.png"}></img>
+                                        } 
+                                        {hl.includes('clean') && 
+                                            <img src={"./clean.png"}></img>
+                                        } 
+                                        {hl.includes('location') && 
+                                            <img src={"./location.png"}></img>
+                                        }                    
                                     </div>
                                     <div id='hltitle'>
                                         {hl}
@@ -168,8 +177,10 @@ class Description extends React.Component{
                                 </button>
                             </span>
                         </div>
-                        <div id='arrgarea' style={movestyle}>
-                            {arrgs}
+                        <div id='arrg'>
+                            <div id='arrgarea' style={movestyle}>
+                                {arrgs}
+                            </div>
                         </div>
                         <div id='btn-next' onClick={e=>this.getnext()}>
                             <span>
