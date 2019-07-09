@@ -43,6 +43,14 @@ html,body {
 #host div{
  text-align: center
 }
+#hostname{
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+    font-size: 14px ;
+    font-weight: 400 ;
+    line-height: 1.28571em ;
+    color: rgb(118, 118, 118) ;
+    margin: 0px
+}
 #host img{
     border-radius: 50%;
     width: 48px;
@@ -56,6 +64,18 @@ html,body {
     background-color: #fff;
     margin: 0;
     margin-top: 20px
+}
+#hl{
+    display: flex;
+    flex-direction: row;
+}
+#hlicon{
+    width: 24px;
+    vertical-align: top
+}
+#hlicon img{
+    width: 20x;
+    height: 20px;
 }
 #hltitle{
     margin: 0px ;
@@ -186,8 +206,6 @@ html,body {
     height: 147px;
     overflow: hidden;
     width: 100%;
-    margin-left: -8px;
-    margin-right: -8px;
 }
 #brarrg{
     width: 33.33%;
