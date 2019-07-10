@@ -43,6 +43,21 @@ class Description extends React.Component{
             showstatus: !this.state.showstatus
         })
     }
+    componentWillMount(){
+        document.addEventListener('mousedown',this.handleClick,false);
+    }
+    componentWillUnmount(){
+        document.removeEventListener('mousedown',this.handleClick,false);
+    }
+    handleClick(e){
+        // console.log('node',this.node);
+        // console.log('target',e.target);
+        if(this.node.contains(e.target)){
+           return;
+        } else {
+          this.hideamenitylist()
+        }
+    }
     render(){
         // console.log('props',this.props);
         var title = this.props.title;
@@ -246,8 +261,8 @@ class Description extends React.Component{
                         </div>
                     </div>
                 </div>
-                <div id='poplistback' style={showpoplist}>
-                    <div id='poplist'>
+                <div id='poplistback' style={showpoplist} onClick={e=>this.handleClick(e)}>
+                    <div id='poplist' ref={node => this.node = node} >
                         <div id='poplisthead'>
                             <button onClick={e=>this.hideamenitylist()}>
                                 <svg viewBox={'0 0 24 24'} role={'img'} focusable={'false'} >
@@ -256,7 +271,7 @@ class Description extends React.Component{
                             </button>
                         </div>
                         <div id='poplisttitle'>Amenities</div>
-                        <div id='poplistcontent'>                           
+                        <div id='poplistcontent' >                           
                                 {poplistitems}    
                         </div>
                     </div>
