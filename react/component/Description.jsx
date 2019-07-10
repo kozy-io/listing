@@ -92,19 +92,21 @@ class Description extends React.Component{
                     poplistitems.push(
                         <div className='poplistitem'>
                             <div className='categorytitle'>{amencategory[i]}</div> 
-
-                            {subcategory.map((cc,index) =>
-                                <div className='categorycontent'>
-                                    {cc}  
-                                    {
-                                        subcomment[index] &&
-                                        <div className='categorycomment'>{subcomment[index]}</div>
-                                    }                              
-                                    <div id='linemg'>
+                            
+                                {subcategory.map((cc,index) =>
+                                    <div className='categorycontent'>
+                                        {cc}  
+                                        {
+                                            subcomment[index] &&
+                                            <div className='categorycomment'>
+                                                {subcomment[index]}
+                                            </div>
+                                        }                              
+                                        <div id='linemg'>
                                             <div id='line'></div>
-                                    </div>
-                                </div> 
-                            )}                       
+                                        </div>
+                                    </div> 
+                                )}                       
                         </div>
                     )
                 }
@@ -254,10 +256,8 @@ class Description extends React.Component{
                             </button>
                         </div>
                         <div id='poplisttitle'>Amenities</div>
-                        <div id='poplistcontent'>
-                            
-                                {poplistitems}
-                            
+                        <div id='poplistcontent'>                           
+                                {poplistitems}    
                         </div>
                     </div>
                 </div>
