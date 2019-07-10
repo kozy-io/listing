@@ -87,13 +87,23 @@ class Description extends React.Component{
             for(var i=0; i<amencategory.length;i++){
                 if(this.props.amenity ){
                     var subcategory = Object.keys(this.props.amenity[amencategory[i]])
-             
+                    var subcomment = Object.values(this.props.amenity[amencategory[i]])
                     // console.log('???',subcategory)
                     poplistitems.push(
                         <div className='poplistitem'>
                             <div className='categorytitle'>{amencategory[i]}</div> 
-                            {subcategory.map(cc=>
-                                <div className='categorycontent'>{cc}</div> 
+
+                            {subcategory.map((cc,index) =>
+                                <div className='categorycontent'>
+                                    {cc}  
+                                    {
+                                        subcomment[index] &&
+                                        <div className='categorycomment'>{subcomment[index]}</div>
+                                    }                              
+                                    <div id='linemg'>
+                                            <div id='line'></div>
+                                    </div>
+                                </div> 
                             )}                       
                         </div>
                     )

@@ -385,8 +385,8 @@ html,body {
     fill: #767676;
 }
 #poplisttitle{
-
     margin: 0px;
+    margin-bottom: 24px;
     padding-top: 2px ;
     padding-bottom: 2px;
     word-wrap: break-word ;
@@ -394,6 +394,16 @@ html,body {
     font-size: 24px ;
     font-weight: 700 ;
     line-height: 1.25em ;
-    color: #484848 ;
-    
+    color: #484848 ;   
+}
+
+.categorytitle{
+    overflow-wrap: break-word ;
+    margin: 0px;
+    margin-bottom: 24px;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
+    font-size: 18px ;
+    font-weight: 800 ;
+    line-height: 1.44444em ;
+    color: rgb(72, 72, 72) ;
 }
