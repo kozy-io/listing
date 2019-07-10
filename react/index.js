@@ -16,7 +16,8 @@ class App extends React.Component {
             host: null,
             highlights: null,
             desc: null,
-            detail: null
+            detail: null,
+            amenity: null,
         }
     }
     componentDidMount(){
@@ -37,11 +38,23 @@ class App extends React.Component {
                 
             }
         })
+        $.ajax({
+            method:'GET',
+            url: '/listing/amenity/' + this.state.id,
+            contentType: 'application/json',
+            success: (amenity)=>{
+                // console.log('amenity',amenity)
+                this.setState({
+                    amenity: amenity.amenities
+                })
+                
+            }
+        })
     }
     render() {
         // console.log('id',this.state)
         return (
-            <Description  title={this.state.title} location={this.state.location} host={this.state.host} highlights={this.state.highlights} desc={this.state.desc} detail={this.state.detail} />
+            <Description  title={this.state.title} location={this.state.location} host={this.state.host} highlights={this.state.highlights} desc={this.state.desc} detail={this.state.detail} amenity={this.state.amenity}/>
         )
     }
 }

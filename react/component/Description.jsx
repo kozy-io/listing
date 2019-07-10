@@ -1,5 +1,6 @@
 import React from 'react';
-const path = require('path');
+import Amenity from './Amenity';
+
 class Description extends React.Component{
     constructor(props){
         super(props)
@@ -8,6 +9,7 @@ class Description extends React.Component{
             showmoredesc: false,   
             showscrolltonext: false,
             move: 0,   
+            showstatus: false
         }
     }
     readmoredesc(){
@@ -30,8 +32,34 @@ class Description extends React.Component{
             move: this.state.move+(100/3)
         })
     }
+    showamenitylist(){
+       this.setState({
+           showstatus: !this.state.showstatus
+       })
+    //    console.log('state in desc',this.state)
+    }
+    hideamenitylist(){
+        this.setState({
+            showstatus: !this.state.showstatus
+        })
+    }
+    componentWillMount(){
+        document.addEventListener('mousedown',this.handleClick,false);
+    }
+    componentWillUnmount(){
+        document.removeEventListener('mousedown',this.handleClick,false);
+    }
+    handleClick(e){
+        // console.log('node',this.node);
+        // console.log('target',e.target);
+        if(this.node.contains(e.target)){
+           return;
+        } else {
+          this.hideamenitylist()
+        }
+    }
     render(){
-        // console.log('location',this.props.location);
+        // console.log('props',this.props);
         var title = this.props.title;
         var location = this.props.location;
         var host = this.props.host;
@@ -40,8 +68,8 @@ class Description extends React.Component{
         var detail = this.props.detail;
         if(detail){
             var br = detail.bedrmnum;
-            var bed = detail.bednum;
-            var guest = detail.guestmax;
+            // var bed = detail.bednum;
+            // var guest = detail.guestmax;
         }
         // console.log('test',br)
         var bedoptions = ['1 queen bed','1 single bed','1 king bed']
@@ -57,7 +85,7 @@ class Description extends React.Component{
             arrgs.push(
                 <div id='brarrg'>
                     <svg viewBox={'0 0 24 24'} role={'presentation'} focusable={'false'}  >
-                        <path d={bedicon} fill-rule={"evenodd"} ></path>
+                        <path d={bedicon} ></path>
                     </svg>
                     <div>
                         <p id='brtext'>bedroom {i}</p>
@@ -66,12 +94,48 @@ class Description extends React.Component{
                 </div>
             )
         }
+        var poplistitems = [];
+        if(this.props.amenity){
+            var amencategory = Object.keys(this.props.amenity)
+        }
+        if(amencategory){
+            for(var i=0; i<amencategory.length;i++){
+                if(this.props.amenity ){
+                    var subcategory = Object.keys(this.props.amenity[amencategory[i]])
+                    var subcomment = Object.values(this.props.amenity[amencategory[i]])
+                    // console.log('???',subcategory)
+                    poplistitems.push(
+                        <div className='poplistitem'>
+                            <div className='categorytitle'>{amencategory[i]}</div> 
+                            
+                                {subcategory.map((cc,index) =>
+                                    <div className='categorycontent'>
+                                        {cc}  
+                                        {
+                                            subcomment[index] &&
+                                            <div className='categorycomment'>
+                                                {subcomment[index]}
+                                            </div>
+                                        }                              
+                                        <div id='linemg'>
+                                            <div id='line'></div>
+                                        </div>
+                                    </div> 
+                                )}                       
+                        </div>
+                    )
+                }
+            }
+        }
+        console.log('amenity===',this.props.amenity)
+        
+        // console.log('len===',amenlength)
         var displaydesc = {display: this.state.showmoredesc ? 'block': 'none'}
         var displayshowmore = {display: this.state.showmoredesc ? 'none': 'flex'}
         // var displaynextarr = {display:this.state.showscrolltonext? 'block':'none'}
         var arrow = 'm16.29 4.3a1 1 0 1 1 1.41 1.42l-8 8a1 1 0 0 1 -1.41 0l-8-8a1 1 0 1 1 1.41-1.42l7.29 7.29z'
         var movestyle = {transform: `translateX(${this.state.move}%)`}
-        
+        var showpoplist = {display: this.state.showstatus? 'block': 'none'}
         return(
             <div id='main'>
                 <div id='summary'>
@@ -134,7 +198,7 @@ class Description extends React.Component{
                         <div id='readmore' onClick={e=>this.readmoredesc()} style={displayshowmore}>
                             <div >Read more about this space</div>
                             <svg viewBox={'0 0 18 18'} role={'presentation'} focusable={'false'}  >
-                                <path d={arrow} fill-rule={"evenodd"} ></path>
+                                <path d={arrow} ></path>
                             </svg>
                         </div>
                         <div id='readmorearea' style={displaydesc}>
@@ -152,7 +216,7 @@ class Description extends React.Component{
                             <div id='readless' onClick={e=>this.readlessdesc()} >
                                 <div >Hide</div>
                                 <svg viewBox={'0 0 18 18'} role={'presentation'} focusable={'false'} >
-                                    <path d={arrow} fill-rule={"evenodd"} ></path>
+                                    <path d={arrow} ></path>
                                 </svg>
                             </div>                           
                         </div>   
@@ -165,6 +229,10 @@ class Description extends React.Component{
                 <div id='linemg'>
                     <div id='line'></div>
                 </div>
+                <Amenity amenity={this.props.amenity} showamenitylist={this.showamenitylist.bind(this)} />
+                <div id='linemg'>
+                    <div id='line'></div>
+                </div>
                 <div id='roomarrg'>
                     <h2>Sleeping arrangements</h2>
                     <div id='arrgline'>
@@ -172,7 +240,7 @@ class Description extends React.Component{
                             <span>
                                 <button type={"button"}>
                                     <svg viewBox={'0 0 18 18'} role={'presentation'} focusable={'false'}  >
-                                        <path d={arrow} fill-rule={"evenodd"} ></path>
+                                        <path d={arrow} ></path>
                                     </svg>
                                 </button>
                             </span>
@@ -186,16 +254,29 @@ class Description extends React.Component{
                             <span>
                                 <button type={"button"}>
                                     <svg viewBox={'0 0 18 18'} role={'presentation'} focusable={'false'}  >
-                                        <path d={arrow} fill-rule={"evenodd"} ></path>
+                                        <path d={arrow} ></path>
                                     </svg>
                                 </button>
                             </span>
                         </div>
                     </div>
                 </div>
-               
+                <div id='poplistback' style={showpoplist} onClick={e=>this.handleClick(e)}>
+                    <div id='poplist' ref={node => this.node = node} >
+                        <div id='poplisthead'>
+                            <button onClick={e=>this.hideamenitylist()}>
+                                <svg viewBox={'0 0 24 24'} role={'img'} focusable={'false'} >
+                                    <path d={'m23.25 24c-.19 0-.38-.07-.53-.22l-10.72-10.72-10.72 10.72c-.29.29-.77.29-1.06 0s-.29-.77 0-1.06l10.72-10.72-10.72-10.72c-.29-.29-.29-.77 0-1.06s.77-.29 1.06 0l10.72 10.72 10.72-10.72c.29-.29.77-.29 1.06 0s .29.77 0 1.06l-10.72 10.72 10.72 10.72c.29.29.29.77 0 1.06-.15.15-.34.22-.53.22'} ></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <div id='poplisttitle'>Amenities</div>
+                        <div id='poplistcontent' >                           
+                                {poplistitems}    
+                        </div>
+                    </div>
+                </div>
             </div>
-
         )
     }
 }
