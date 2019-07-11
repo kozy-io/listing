@@ -1,153 +1,179 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Description test suite snapshot 1`] = `
-<div>
-  <div
-    id="summary"
-  >
+<Description>
+  <div>
     <div
-      id="tilo"
+      id="summary"
     >
       <div
-        id="title"
-      />
-      <div
-        id="location"
-      />
-    </div>
-    <div />
-  </div>
-  <div
-    id="hls"
-  />
-  <div
-    id="linemg"
-  >
-    <div
-      id="line"
-    />
-  </div>
-  <div
-    id="descs"
-  />
-  <div
-    id="linemg"
-  >
-    <div
-      id="line"
-    />
-  </div>
-  <Amenity
-    showamenitylist={[Function]}
-  />
-  <div
-    id="linemg"
-  >
-    <div
-      id="line"
-    />
-  </div>
-  <div
-    id="roomarrg"
-  >
-    <h2>
-      Sleeping arrangements
-    </h2>
-    <div
-      id="arrgline"
-    >
-      <div
-        id="btn-pre"
-        onClick={[Function]}
-      >
-        <span>
-          <button
-            type="button"
-          >
-            <svg
-              focusable="false"
-              role="presentation"
-              viewBox="0 0 18 18"
-            >
-              <path
-                d="m16.29 4.3a1 1 0 1 1 1.41 1.42l-8 8a1 1 0 0 1 -1.41 0l-8-8a1 1 0 1 1 1.41-1.42l7.29 7.29z"
-              />
-            </svg>
-          </button>
-        </span>
-      </div>
-      <div
-        id="arrg"
+        id="tilo"
       >
         <div
-          id="arrgarea"
-          style={
-            Object {
-              "transform": "translateX(0%)",
-            }
-          }
+          id="title"
+        />
+        <div
+          id="location"
         />
       </div>
+      <div />
+    </div>
+    <div
+      id="hls"
+    />
+    <div
+      id="linemg"
+    >
       <div
-        id="btn-next"
-        onClick={[Function]}
+        id="line"
+      />
+    </div>
+    <div
+      id="descs"
+    />
+    <div
+      id="linemg"
+    >
+      <div
+        id="line"
+      />
+    </div>
+    <Amenity
+      showamenitylist={[Function]}
+    >
+      <div
+        id="amenityarea"
       >
-        <span>
+        <div
+          id="amenhead"
+        >
+          Amenities
+        </div>
+        <div
+          id="amenarea"
+        />
+        <div
+          id="moreamen"
+        >
           <button
-            type="button"
+            id="btn-moreamen"
+            onClick={[Function]}
+          >
+            Show all 
+             amenities
+          </button>
+        </div>
+      </div>
+    </Amenity>
+    <div
+      id="linemg"
+    >
+      <div
+        id="line"
+      />
+    </div>
+    <div
+      id="roomarrg"
+    >
+      <h2>
+        Sleeping arrangements
+      </h2>
+      <div
+        id="arrgline"
+      >
+        <div
+          id="btn-pre"
+          onClick={[Function]}
+        >
+          <span>
+            <button
+              type="button"
+            >
+              <svg
+                focusable="false"
+                role="presentation"
+                viewBox="0 0 18 18"
+              >
+                <path
+                  d="m16.29 4.3a1 1 0 1 1 1.41 1.42l-8 8a1 1 0 0 1 -1.41 0l-8-8a1 1 0 1 1 1.41-1.42l7.29 7.29z"
+                />
+              </svg>
+            </button>
+          </span>
+        </div>
+        <div
+          id="arrg"
+        >
+          <div
+            id="arrgarea"
+            style={
+              Object {
+                "transform": "translateX(0%)",
+              }
+            }
+          />
+        </div>
+        <div
+          id="btn-next"
+          onClick={[Function]}
+        >
+          <span>
+            <button
+              type="button"
+            >
+              <svg
+                focusable="false"
+                role="presentation"
+                viewBox="0 0 18 18"
+              >
+                <path
+                  d="m16.29 4.3a1 1 0 1 1 1.41 1.42l-8 8a1 1 0 0 1 -1.41 0l-8-8a1 1 0 1 1 1.41-1.42l7.29 7.29z"
+                />
+              </svg>
+            </button>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      id="poplistback"
+      onClick={[Function]}
+      style={
+        Object {
+          "display": "none",
+        }
+      }
+    >
+      <div
+        id="poplist"
+      >
+        <div
+          id="poplisthead"
+        >
+          <button
+            onClick={[Function]}
           >
             <svg
               focusable="false"
-              role="presentation"
-              viewBox="0 0 18 18"
+              role="img"
+              viewBox="0 0 24 24"
             >
               <path
-                d="m16.29 4.3a1 1 0 1 1 1.41 1.42l-8 8a1 1 0 0 1 -1.41 0l-8-8a1 1 0 1 1 1.41-1.42l7.29 7.29z"
+                d="m23.25 24c-.19 0-.38-.07-.53-.22l-10.72-10.72-10.72 10.72c-.29.29-.77.29-1.06 0s-.29-.77 0-1.06l10.72-10.72-10.72-10.72c-.29-.29-.29-.77 0-1.06s.77-.29 1.06 0l10.72 10.72 10.72-10.72c.29-.29.77-.29 1.06 0s .29.77 0 1.06l-10.72 10.72 10.72 10.72c.29.29.29.77 0 1.06-.15.15-.34.22-.53.22"
               />
             </svg>
           </button>
-        </span>
-      </div>
-    </div>
-  </div>
-  <div
-    id="poplistback"
-    onClick={[Function]}
-    style={
-      Object {
-        "display": "none",
-      }
-    }
-  >
-    <div
-      id="poplist"
-    >
-      <div
-        id="poplisthead"
-      >
-        <button
-          onClick={[Function]}
+        </div>
+        <div
+          id="poplisttitle"
         >
-          <svg
-            focusable="false"
-            role="img"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="m23.25 24c-.19 0-.38-.07-.53-.22l-10.72-10.72-10.72 10.72c-.29.29-.77.29-1.06 0s-.29-.77 0-1.06l10.72-10.72-10.72-10.72c-.29-.29-.29-.77 0-1.06s.77-.29 1.06 0l10.72 10.72 10.72-10.72c.29-.29.77-.29 1.06 0s .29.77 0 1.06l-10.72 10.72 10.72 10.72c.29.29.29.77 0 1.06-.15.15-.34.22-.53.22"
-            />
-          </svg>
-        </button>
+          Amenities
+        </div>
+        <div
+          id="poplistcontent"
+        />
       </div>
-      <div
-        id="poplisttitle"
-      >
-        Amenities
-      </div>
-      <div
-        id="poplistcontent"
-      />
     </div>
   </div>
-</div>
+</Description>
 `;

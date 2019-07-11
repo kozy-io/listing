@@ -212,7 +212,7 @@ html,body {
     width: 100%;
 }
 #brarrg{
-    width: 33.333333333333336%;
+    width: 221.333333333333px !important;
     display: inline-block;
     vertical-align: top;
     padding: 24px;

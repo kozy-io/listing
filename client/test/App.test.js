@@ -26,7 +26,6 @@ describe('App test suite', () => {
             }
         });
         // console.log(app.instance())
-        console.log(app.debug())
         expect(app.exists('#main')).toBeTruthy();
     })
 });
