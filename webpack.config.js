@@ -2,7 +2,7 @@ var path = require('path');
     module.exports = {
       mode: 'development',
       watch: true,
-      entry: path.resolve(__dirname, 'react/index.js'),
+      entry: path.resolve(__dirname, 'client/index.js'),
       output: {
         path: path.resolve(__dirname,'public'),
         filename: 'bundle.js'

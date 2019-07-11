@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App test suite snapshots 1`] = `
+<div
+  id="main"
+>
+  <Description
+    amenity={Object {}}
+    desc={Object {}}
+    detail={Object {}}
+    highlights={Object {}}
+    host={Object {}}
+    location=""
+    title=""
+  />
+</div>
+`;
