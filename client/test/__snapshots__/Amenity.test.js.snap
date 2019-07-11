@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Amenity test suite snapshots 1`] = `
+<div
+  id="amenityarea"
+>
+  <div
+    id="amenhead"
+  >
+    Amenities
+  </div>
+  <div
+    id="amenarea"
+  >
+    <div
+      id="amenarealeft"
+    >
+      <div
+        className="amenitem"
+      >
+        Air conditioning
+      </div>
+      <div
+        className="amenitem"
+      >
+        Cable TV
+      </div>
+    </div>
+    <div
+      id="amenarearight"
+    >
+      <div
+        className="amenitem"
+      >
+        Essentials
+      </div>
+      <div
+        className="amenitem"
+      >
+        Hair dryer
+      </div>
+    </div>
+  </div>
+  <div
+    id="moreamen"
+  >
+    <button
+      id="btn-moreamen"
+      onClick={[Function]}
+    >
+      Show all 
+      4
+       amenities
+    </button>
+  </div>
+</div>
+`;

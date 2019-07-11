@@ -59,10 +59,12 @@ class App extends React.Component {
     }
     
     render() {
-        // console.log('id',this.state)
+        console.log('id',this.state)
         return (
             <div id='main'>
-                <Description  title={this.state.title} location={this.state.location} host={this.state.host} highlights={this.state.highlights} desc={this.state.desc} detail={this.state.detail} amenity={this.state.amenity}/>
+                <Description  
+                title={this.state.title} location={this.state.location} host={this.state.host} highlights={this.state.highlights} desc={this.state.desc} detail={this.state.detail} amenity={this.state.amenity}
+                />
             </div>
         )
     }

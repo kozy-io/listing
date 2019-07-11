@@ -20,31 +20,31 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>0/9</span>
+        <span class='fraction'>9/9</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/8</span>
+        <span class='fraction'>8/8</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>0/4</span>
+        <span class='fraction'>4/4</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>0/9</span>
+        <span class='fraction'>9/9</span>
       </div>
     </div>
     <p class="quiet">
       Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
     </p>
   </div>
-  <div class='status-line low'></div>
+  <div class='status-line high'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -94,26 +94,23 @@
 <a name='L46'></a><a href='#L46'>46</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">26x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -128,7 +125,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -138,24 +138,24 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
 class Amenity extends React.Component{
-<span class="fstat-no" title="function not covered" >    co</span>nstructor(props){
-<span class="cstat-no" title="statement not covered" >        super(props)</span>
+    constructor(props){
+        super(props)
     }
-<span class="fstat-no" title="function not covered" >    sh</span>owamenlist(){
-<span class="cstat-no" title="statement not covered" >        this.props.showamenitylist()</span>
+    showamenlist(){
+        this.props.showamenitylist()
     }
-<span class="fstat-no" title="function not covered" >    re</span>nder(){ 
+    render(){ 
         // console.log('props in Amenity',this.props)  
-<span class="cstat-no" title="statement not covered" >        if(this.props.amenity){</span>
-            var basicitems = <span class="cstat-no" title="statement not covered" >this.props.amenity.Basic</span>
+        if(this.props.amenity){
+            var basicitems = this.props.amenity.Basic
         }
-<span class="cstat-no" title="statement not covered" >        if(basicitems){</span>
-            var amenitems = <span class="cstat-no" title="statement not covered" >Object.keys(basicitems)</span>
-            var amenlength = <span class="cstat-no" title="statement not covered" >amenitems.length</span>
+        if(basicitems){
+            var amenitems = Object.keys(basicitems)
+            var amenlength = amenitems.length
         }
         // console.log('items',amenitems);
         // console.log('length',amenlength)
-<span class="cstat-no" title="statement not covered" >        return(</span>
+        return(
             &lt;div id='amenityarea' &gt;                
                 &lt;div id='amenhead'&gt;Amenities&lt;/div&gt;
                 &lt;div id='amenarea'&gt;
@@ -173,7 +173,7 @@ class Amenity extends React.Component{
                 }      
                 &lt;/div&gt;
                 &lt;div id='moreamen'&gt;
-                    &lt;button id='btn-moreamen' onClick={<span class="fstat-no" title="function not covered" >e=</span>&gt;<span class="cstat-no" title="statement not covered" >this.showamenlist()}</span>&gt;
+                    &lt;button id='btn-moreamen' onClick={e=&gt;this.showamenlist()}&gt;
                         Show all {amenlength} amenities
                     &lt;/button&gt;
                 &lt;/div&gt;
@@ -187,7 +187,7 @@ export default Amenity;</pre></td></tr>
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Jul 10 2019 21:50:32 GMT-0700 (PDT)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Jul 11 2019 14:38:32 GMT-0700 (PDT)
 </div>
 </div>
 <script src="prettify.js"></script>
