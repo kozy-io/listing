@@ -19,6 +19,14 @@ describe('App test suite', () => {
     })
     it('render child div' , ()=>{
         const app = shallow(<App />);
+        app.setState({
+            host: {
+                "name":"Hardy",
+                "pic":"http://lorempixel.com/640/480"
+            }
+        });
+        // console.log(app.instance())
+        console.log(app.debug())
         expect(app.exists('#main')).toBeTruthy();
     })
 });

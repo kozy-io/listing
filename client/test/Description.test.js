@@ -2,16 +2,18 @@ import React from 'react';
 import Description from '../component/Description';
 import { shallow, configure ,mount} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-
+import toJson from 'enzyme-to-json';
 
 configure({ adapter: new Adapter() });
+require('babel-core/register');
+require('babel-polyfill');
 
 describe('Description test suite', () => {
     
     
     test('render Description', () => {
         const description = shallow(<Description />) 
-        // console.log(description.debug()) 
+        console.log('=========',description.debug()) 
     });
     test('render listing house titel in Description', () => {
         const description = shallow(<Description />) 
@@ -21,7 +23,7 @@ describe('Description test suite', () => {
         const description = shallow(<Description />) 
         expect(description.find('#location').exists()).toBeTruthy() 
     });
-    test('render 2 elements in host div', async() => {
+    test('snapshot', () => {
         
         var mockData = {
             title: "Quis ab sint veritatis",
@@ -46,8 +48,20 @@ describe('Description test suite', () => {
             },
         }
         const description = shallow(<Description />) 
-        console.log(description.debug()) 
-        await expect(description.find('#host').children().length).toBe(2)
-    });
+        description.setState(mockData);
 
+        expect(toJson(description)).toMatchSnapshot();
+    });
+    test(' host has 2 children ',async () => {
+        
+        const description = await mount(<Description />) 
+        // description.setState({
+        //     host: {
+        //         "name":"Hardy",
+        //         "pic":"http://lorempixel.com/640/480"
+        //     }
+        // });
+        // console.log(description.instance().)
+        expect(description.instance());
+      })
 });

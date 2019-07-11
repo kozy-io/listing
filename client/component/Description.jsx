@@ -128,7 +128,7 @@ class Description extends React.Component{
                 }
             }
         }
-        console.log('amenity===',this.props.amenity)
+        // console.log('amenity===',this.props.amenity)
         
         // console.log('len===',amenlength)
         var displaydesc = {display: this.state.showmoredesc ? 'block': 'none'}
@@ -138,15 +138,15 @@ class Description extends React.Component{
         var movestyle = {transform: `translateX(${this.state.move}%)`}
         var showpoplist = {display: this.state.showstatus? 'block': 'none'}
         return(
-            <div id='main'>
+            <div >
                 <div id='summary'>
                     <div id='tilo'>
                         <div id='title'>{title}</div>
                         <div id='location'>{location}</div>
                     </div>
-                    <div id='host'> 
+                    <div > 
                         { host &&
-                            <div >
+                            <div id='host'>
                                 <img src={host.pic}></img>
                                 <div id='hostname'>{host.name}</div>   
                             </div>

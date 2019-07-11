@@ -4,12 +4,11 @@ import $ from 'jquery';
 import Description from './Description';
 
 
-var num = faker.random.number({min:1, max:100});
+
 class App extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            id: num,
             title: '',
             location: '',
             host: {},
@@ -20,10 +19,14 @@ class App extends React.Component {
         }
     }
     componentDidMount(){
-        
+        var num = faker.random.number({min:1, max:100});
+        this.getDescinfo(num);
+        this.getAmeninfo(num);
+    }
+    getDescinfo(num){
         $.ajax({
             method:'GET',
-            url: '/listing/desc/' + this.state.id,
+            url: '/listing/desc/' + num,
             contentType: 'application/json',
             success: (desc)=>{
                 // console.log(desc)
@@ -38,9 +41,12 @@ class App extends React.Component {
                 
             }
         })
+
+    }
+    getAmeninfo(num){
         $.ajax({
             method:'GET',
-            url: '/listing/amenity/' + this.state.id,
+            url: '/listing/amenity/' + num,
             contentType: 'application/json',
             success: (amenity)=>{
                 // console.log('amenity',amenity)
@@ -51,6 +57,7 @@ class App extends React.Component {
             }
         })
     }
+    
     render() {
         // console.log('id',this.state)
         return (
