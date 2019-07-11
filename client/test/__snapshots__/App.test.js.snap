@@ -1,17 +1,66 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App test suite snapshots 1`] = `
+exports[`App basic render test suite snapshots 1`] = `
 <div
   id="main"
 >
   <Description
-    amenity={Object {}}
-    desc={Object {}}
-    detail={Object {}}
-    highlights={Object {}}
-    host={Object {}}
-    location=""
-    title=""
+    amenity={
+      Object {
+        "Basic": Object {
+          "Cable TV": null,
+          "Dryer": "In the building, free or for a fee",
+          "Essentials": "Towels, bed sheets, soap, and toilet paper",
+          "Hot water": null,
+          "Hotwater": null,
+          "Laptop friendly workspace": "A table or desk with space for a laptop and a chair that’s comfortable to work in",
+          "Washer": "In the building, free or for a fee",
+        },
+        "Not included": Object {
+          "Air conditioning": null,
+          "Free parking on premises": null,
+          "Hair dryer": null,
+          "Iron": null,
+          "Kitchen": null,
+          "TV": null,
+          "Wifi": null,
+        },
+      }
+    }
+    desc={
+      Object {
+        "General": "General description.",
+        "Interation with guests": "Description paragraph 2",
+        "License or registartion number": "STR-3921741",
+      }
+    }
+    detail={
+      Object {
+        "bathrmnum": 1,
+        "bednum": Array [
+          "1 single bed",
+        ],
+        "bedrmnum": 1,
+        "guestmax": 3,
+        "type": "Hotel room",
+      }
+    }
+    highlights={
+      Object {
+        "Hardy is a Superhost": "Iure illo possimus impedit blanditiis ullam laborum omnis.",
+        "Private room in hostel": "3 guests	1 room	1 bed	1 bath",
+        "Self check-in": "Rerum modi nihil est et.",
+        "Sparkling clean": "In necessitatibus id.",
+      }
+    }
+    host={
+      Object {
+        "name": "Hardy",
+        "pic": "http://lorempixel.com/640/480",
+      }
+    }
+    location="Schneidermouth"
+    title="Quis ab sint veritatis"
   />
 </div>
 `;
