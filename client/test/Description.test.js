@@ -102,14 +102,14 @@ describe('Description basic rendering test suite', () => {
             detail: {"bedrmnum":2}
         }
         var roomCount = mockData.detail.bedrmnum;
-        console.log('count',roomCount)
+        // console.log('count',roomCount)
         description.setProps({
             detail: {
               "bedrmnum":2,
               "bednum" :[ "1 queen bed", "1 king bed"]
             },
         })  
-        console.log(description.debug())
+        // console.log(description.debug())
         expect(description.find('#arrgarea').children().length).toBe(roomCount)
       });
 });

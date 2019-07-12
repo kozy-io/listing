@@ -59,7 +59,7 @@ class App extends React.Component {
     }
     
     render() {
-        console.log('id',this.state)
+        // console.log('id',this.state)
         return (
             <div id='main'>
                 <Description  
