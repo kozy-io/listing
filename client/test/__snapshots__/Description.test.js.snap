@@ -347,6 +347,7 @@ exports[`Description basic rendering test suite snapshot 1`] = `
   <div
     className="poplistback"
     onClick={[Function]}
+    onKeyDown={[Function]}
     style={
       Object {
         "display": "none",

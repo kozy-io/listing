@@ -24,18 +24,18 @@ describe('Amenity test suite', () => {
         // console.log(amenityWrapper.debug())
         expect(amenityWrapper.exists()).toBe(true);
     })
-    it('snapshots', async()=>{
-        const amenityWrapper = shallow(<Amenity />);
-        amenityWrapper.setProps({
-            amenity: {
-                Basic:{
-                    'Air conditioning': null,
-                    'Cable TV': null,
-                    'Essentials': null,
-                    'Hair dryer': null
-                }
-            }
-        });
-        expect(toJson(amenityWrapper)).toMatchSnapshot()
-    })
+    // it('snapshots', async()=>{
+    //     const amenityWrapper = shallow(<Amenity />);
+    //     amenityWrapper.setProps({
+    //         amenity: {
+    //             Basic:{
+    //                 'Air conditioning': null,
+    //                 'Cable TV': null,
+    //                 'Essentials': null,
+    //                 'Hair dryer': null
+    //             }
+    //         }
+    //     });
+    //     expect(toJson(amenityWrapper)).toMatchSnapshot()
+    // })
 })

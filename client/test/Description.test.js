@@ -16,36 +16,36 @@ describe('Description basic rendering test suite', () => {
         // console.log(description.debug()) 
     });
 
-    test('snapshot', async() => {     
-        const description = shallow(<Description />)
-        description.setProps({
-            title: "Quis ab sint veritatis",
-            location: "Schneidermouth",
-            host: {
-                "name":"Hardy",
-                "pic":"http://lorempixel.com/640/480"
-            },
-            detail: {
-                "type":"Hotel room",
-                "bedrmnum":1,
-                "bathrmnum":1,
-                "guestmax":3,
-                "bednum":[ "1 single bed" ]    
-            },
-            highlights: {
-                "Private room in hostel":"3 guests\t1 room\t1 bed\t1 bath",
-                "Self check-in":"Rerum modi nihil est et.",
-                "Hardy is a Superhost":"Iure illo possimus impedit blanditiis ullam laborum omnis.",
-                "Sparkling clean":"In necessitatibus id."
-            },
-            desc: {
-                "General":"General description.",
-                "Interation with guests":"Description paragraph 2",
-                "License or registartion number":"STR-3921741"
-            }
-        })       
-        expect(toJson(description)).toMatchSnapshot();
-    });
+    // test('snapshot', async() => {     
+    //     const description = shallow(<Description />)
+    //     description.setProps({
+    //         title: "Quis ab sint veritatis",
+    //         location: "Schneidermouth",
+    //         host: {
+    //             "name":"Hardy",
+    //             "pic":"http://lorempixel.com/640/480"
+    //         },
+    //         detail: {
+    //             "type":"Hotel room",
+    //             "bedrmnum":1,
+    //             "bathrmnum":1,
+    //             "guestmax":3,
+    //             "bednum":[ "1 single bed" ]    
+    //         },
+    //         highlights: {
+    //             "Private room in hostel":"3 guests\t1 room\t1 bed\t1 bath",
+    //             "Self check-in":"Rerum modi nihil est et.",
+    //             "Hardy is a Superhost":"Iure illo possimus impedit blanditiis ullam laborum omnis.",
+    //             "Sparkling clean":"In necessitatibus id."
+    //         },
+    //         desc: {
+    //             "General":"General description.",
+    //             "Interation with guests":"Description paragraph 2",
+    //             "License or registartion number":"STR-3921741"
+    //         }
+    //     })       
+    //     expect(toJson(description)).toMatchSnapshot();
+    // });
 
     test('render listing house titel without crashing', () => {
         const description = shallow(<Description />) 
