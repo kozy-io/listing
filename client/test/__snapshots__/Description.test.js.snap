@@ -3,31 +3,31 @@
 exports[`Description basic rendering test suite snapshot 1`] = `
 <div>
   <div
-    id="summary"
+    className="summary"
   >
     <div
-      id="tilo"
+      className="tilo"
     >
       <div
-        id="title"
+        className="title"
       >
         Quis ab sint veritatis
       </div>
       <div
-        id="location"
+        className="location"
       >
         Schneidermouth
       </div>
     </div>
     <div>
       <div
-        id="host"
+        className="host"
       >
         <img
           src="http://lorempixel.com/640/480"
         />
         <div
-          id="hostname"
+          className="hostname"
         >
           Hardy
         </div>
@@ -35,92 +35,92 @@ exports[`Description basic rendering test suite snapshot 1`] = `
     </div>
   </div>
   <div
-    id="hls"
+    className="hls"
   >
     <div>
       <div
-        id="hl"
+        className="hl"
         key="Private room in hostel"
       >
         <div
-          id="hlicon"
+          className="hlicon"
         >
           <img
             src="./house.png"
           />
         </div>
         <div
-          id="hltitle"
+          className="hltitle"
         >
           Private room in hostel
           <div
-            id="hlcontent"
+            className="hlcontent"
           >
             3 guests	1 room	1 bed	1 bath
           </div>
         </div>
       </div>
       <div
-        id="hl"
+        className="hl"
         key="Self check-in"
       >
         <div
-          id="hlicon"
+          className="hlicon"
         >
           <img
             src="./easy-chkin.png"
           />
         </div>
         <div
-          id="hltitle"
+          className="hltitle"
         >
           Self check-in
           <div
-            id="hlcontent"
+            className="hlcontent"
           >
             Rerum modi nihil est et.
           </div>
         </div>
       </div>
       <div
-        id="hl"
+        className="hl"
         key="Hardy is a Superhost"
       >
         <div
-          id="hlicon"
+          className="hlicon"
         >
           <img
             src="./superhost.png"
           />
         </div>
         <div
-          id="hltitle"
+          className="hltitle"
         >
           Hardy is a Superhost
           <div
-            id="hlcontent"
+            className="hlcontent"
           >
             Iure illo possimus impedit blanditiis ullam laborum omnis.
           </div>
         </div>
       </div>
       <div
-        id="hl"
+        className="hl"
         key="Sparkling clean"
       >
         <div
-          id="hlicon"
+          className="hlicon"
         >
           <img
             src="./clean.png"
           />
         </div>
         <div
-          id="hltitle"
+          className="hltitle"
         >
           Sparkling clean
           <div
-            id="hlcontent"
+            className="hlcontent"
           >
             In necessitatibus id.
           </div>
@@ -129,27 +129,27 @@ exports[`Description basic rendering test suite snapshot 1`] = `
     </div>
   </div>
   <div
-    id="linemg"
+    className="linemg"
   >
     <div
-      id="line"
+      className="line"
     />
   </div>
   <div
-    id="descs"
+    className="descs"
   >
     <div>
       <div
-        id="generaldesc"
+        className="generaldesc"
       >
         <p
-          id="desccontent"
+          className="desccontent"
         >
           General description.
         </p>
       </div>
       <div
-        id="readmore"
+        className="readmore"
         onClick={[Function]}
         style={
           Object {
@@ -171,7 +171,7 @@ exports[`Description basic rendering test suite snapshot 1`] = `
         </svg>
       </div>
       <div
-        id="readmorearea"
+        className="readmorearea"
         style={
           Object {
             "display": "none",
@@ -180,37 +180,37 @@ exports[`Description basic rendering test suite snapshot 1`] = `
       >
         <div>
           <div
-            id="desctitle"
+            className="desctitle"
             key="Interation with guests"
           >
             Interation with guests
             <p
-              id="desccontent"
+              className="desccontent"
             >
               Description paragraph 2
             </p>
           </div>
           <div
-            id="desctitle"
+            className="desctitle"
             key="License or registartion number"
           >
             License or registartion number
             <p
-              id="desccontent"
+              className="desccontent"
             >
               STR-3921741
             </p>
           </div>
         </div>
         <div
-          id="fakedesclink"
+          className="fakedesclink"
         >
           <div>
             Learn about this number
           </div>
         </div>
         <div
-          id="readless"
+          className="readless"
           onClick={[Function]}
         >
           <div>
@@ -228,7 +228,7 @@ exports[`Description basic rendering test suite snapshot 1`] = `
         </div>
       </div>
       <div
-        id="fakedesclink"
+        className="fakedesclink"
       >
         <div>
           Contact host
@@ -237,33 +237,33 @@ exports[`Description basic rendering test suite snapshot 1`] = `
     </div>
   </div>
   <div
-    id="linemg"
+    className="linemg"
   >
     <div
-      id="line"
+      className="line"
     />
   </div>
   <Amenity
     showamenitylist={[Function]}
   />
   <div
-    id="linemg"
+    className="linemg"
   >
     <div
-      id="line"
+      className="line"
     />
   </div>
   <div
-    id="roomarrg"
+    className="roomarrg"
   >
     <h2>
       Sleeping arrangements
     </h2>
     <div
-      id="arrgline"
+      className="arrgline"
     >
       <div
-        id="btn-pre"
+        className="btnPre"
         onClick={[Function]}
       >
         <span>
@@ -283,10 +283,10 @@ exports[`Description basic rendering test suite snapshot 1`] = `
         </span>
       </div>
       <div
-        id="arrg"
+        className="arrg"
       >
         <div
-          id="arrgarea"
+          className="arrgarea"
           style={
             Object {
               "transform": "translateX(0%)",
@@ -294,8 +294,7 @@ exports[`Description basic rendering test suite snapshot 1`] = `
           }
         >
           <div
-            id="brarrg"
-            key="1"
+            className="brarrg"
           >
             <svg
               focusable="false"
@@ -308,13 +307,13 @@ exports[`Description basic rendering test suite snapshot 1`] = `
             </svg>
             <div>
               <p
-                id="brtext"
+                className="brtext"
               >
                 bedroom 
                 1
               </p>
               <p
-                id="bedinroom"
+                className="bedinroom"
               >
                 1 single bed
               </p>
@@ -323,7 +322,7 @@ exports[`Description basic rendering test suite snapshot 1`] = `
         </div>
       </div>
       <div
-        id="btn-next"
+        className="btnNext"
         onClick={[Function]}
       >
         <span>
@@ -345,7 +344,7 @@ exports[`Description basic rendering test suite snapshot 1`] = `
     </div>
   </div>
   <div
-    id="poplistback"
+    className="poplistback"
     onClick={[Function]}
     style={
       Object {
@@ -354,13 +353,13 @@ exports[`Description basic rendering test suite snapshot 1`] = `
     }
   >
     <div
-      id="poplist"
+      className="poplist"
     >
       <div
-        id="poplisthead"
+        className="poplisthead"
       >
         <button
-          id="btn-close"
+          className="btnClose"
           onClick={[Function]}
         >
           <svg
@@ -375,12 +374,12 @@ exports[`Description basic rendering test suite snapshot 1`] = `
         </button>
       </div>
       <div
-        id="poplisttitle"
+        className="poplisttitle"
       >
         Amenities
       </div>
       <div
-        id="poplistcontent"
+        className="poplistcontent"
       />
     </div>
   </div>

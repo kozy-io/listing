@@ -2,7 +2,7 @@ import React from 'react';
 const faker = require('faker');
 import $ from 'jquery';
 import Description from './Description';
-
+import styles from './style/App.css';
 
 
 class App extends React.Component {
@@ -61,7 +61,7 @@ class App extends React.Component {
     render() {
         // console.log('id',this.state)
         return (
-            <div id='main'>
+            <div className={styles.main}>
                 <Description  
                 title={this.state.title} location={this.state.location} host={this.state.host} highlights={this.state.highlights} desc={this.state.desc} detail={this.state.detail} amenity={this.state.amenity}
                 />
