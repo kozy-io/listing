@@ -20,24 +20,24 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">78.85% </span>
+        <span class="strong">74.58% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>41/52</span>
+        <span class='fraction'>44/59</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">76.09% </span>
+        <span class="strong">72.92% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>35/46</span>
+        <span class='fraction'>35/48</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">84.21% </span>
+        <span class="strong">73.91% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>16/19</span>
+        <span class='fraction'>17/23</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">80% </span>
+        <span class="strong">76.79% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>40/50</span>
+        <span class='fraction'>43/56</span>
       </div>
     </div>
     <p class="quiet">
@@ -322,7 +322,22 @@
 <a name='L274'></a><a href='#L274'>274</a>
 <a name='L275'></a><a href='#L275'>275</a>
 <a name='L276'></a><a href='#L276'>276</a>
-<a name='L277'></a><a href='#L277'>277</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L277'></a><a href='#L277'>277</a>
+<a name='L278'></a><a href='#L278'>278</a>
+<a name='L279'></a><a href='#L279'>279</a>
+<a name='L280'></a><a href='#L280'>280</a>
+<a name='L281'></a><a href='#L281'>281</a>
+<a name='L282'></a><a href='#L282'>282</a>
+<a name='L283'></a><a href='#L283'>283</a>
+<a name='L284'></a><a href='#L284'>284</a>
+<a name='L285'></a><a href='#L285'>285</a>
+<a name='L286'></a><a href='#L286'>286</a>
+<a name='L287'></a><a href='#L287'>287</a>
+<a name='L288'></a><a href='#L288'>288</a>
+<a name='L289'></a><a href='#L289'>289</a>
+<a name='L290'></a><a href='#L290'>290</a>
+<a name='L291'></a><a href='#L291'>291</a>
+<a name='L292'></a><a href='#L292'>292</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -336,6 +351,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">17x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -373,6 +390,19 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -612,6 +642,8 @@ class Description extends React.Component{
             move: 0,   
             showstatus: false
         }
+        this.handleKeyDown = this.handleKeyDown.bind(this)
+        this.handleClick =this.handleClick.bind(this)
     }
     readmoredesc(){
         this.setState({
@@ -653,7 +685,20 @@ class Description extends React.Component{
             }
         }
     }
+    componentDidMount(){
+        document.addEventListener("keydown", this.handleKeyDown, false);
+    }
+<span class="fstat-no" title="function not covered" >    co</span>mponentWillUnmount(){
+<span class="cstat-no" title="statement not covered" >    document.removeEventListener("keydown", this.handleKeyDown, false);</span>
+    }
 &nbsp;
+<span class="fstat-no" title="function not covered" >    ha</span>ndleKeyDown(e){
+<span class="cstat-no" title="statement not covered" >        if (e.key === 'Escape') {</span>
+<span class="cstat-no" title="statement not covered" >            this.setState({</span>
+                showstatus: false
+            })
+        }
+    }
     render(){
         // console.log('props',this.props);
         const { title, location, host, highlights, desc, detail } = this.props;
@@ -853,7 +898,7 @@ class Description extends React.Component{
                         &lt;/div&gt;
                     &lt;/div&gt;
                 &lt;/div&gt;
-                &lt;div className={styles.poplistback} style={showpoplist} onClick={e=&gt;{this.handleClick(e)}}&gt;
+                &lt;div className={styles.poplistback} style={showpoplist} onClick={e=&gt;{this.handleClick(e)}} onKeyDown={<span class="fstat-no" title="function not covered" >e=</span>&gt;{<span class="cstat-no" title="statement not covered" >this.handleKeyDown(e)}</span>}&gt;
                     &lt;div className={styles.poplist} ref={node =&gt; this.node = node} &gt;
                         &lt;div className={styles.poplisthead}&gt;
                             &lt;button  className={styles.btnClose} onClick={e=&gt;this.hideamenitylist()}&gt;
@@ -880,7 +925,7 @@ export default Description;</pre></td></tr>
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Jul 12 2019 10:14:23 GMT-0700 (PDT)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Jul 12 2019 11:31:14 GMT-0700 (PDT)
 </div>
 </div>
 <script src="prettify.js"></script>

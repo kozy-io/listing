@@ -12,6 +12,8 @@ class Description extends React.Component{
             move: 0,   
             showstatus: false
         }
+        this.handleKeyDown = this.handleKeyDown.bind(this)
+        this.handleClick =this.handleClick.bind(this)
     }
     readmoredesc(){
         this.setState({
@@ -53,7 +55,20 @@ class Description extends React.Component{
             }
         }
     }
+    componentDidMount(){
+        document.addEventListener("keydown", this.handleKeyDown, false);
+    }
+    componentWillUnmount(){
+    document.removeEventListener("keydown", this.handleKeyDown, false);
+    }
 
+    handleKeyDown(e){
+        if (e.key === 'Escape') {
+            this.setState({
+                showstatus: false
+            })
+        }
+    }
     render(){
         // console.log('props',this.props);
         const { title, location, host, highlights, desc, detail } = this.props;
@@ -253,7 +268,7 @@ class Description extends React.Component{
                         </div>
                     </div>
                 </div>
-                <div className={styles.poplistback} style={showpoplist} onClick={e=>{this.handleClick(e)}}>
+                <div className={styles.poplistback} style={showpoplist} onClick={e=>{this.handleClick(e)}} onKeyDown={e=>{this.handleKeyDown(e)}}>
                     <div className={styles.poplist} ref={node => this.node = node} >
                         <div className={styles.poplisthead}>
                             <button  className={styles.btnClose} onClick={e=>this.hideamenitylist()}>

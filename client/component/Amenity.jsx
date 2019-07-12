@@ -8,6 +8,7 @@ class Amenity extends React.Component{
     showamenlist(){
         this.props.showamenitylist()
     }
+   
     render(){ 
         // console.log('props in Amenity',this.props)  
         if(this.props.amenity){
@@ -86,7 +87,7 @@ class Amenity extends React.Component{
                 }      
                 </div>
                 <div className={styles.moreamen}>
-                    <button className={styles.btnMoreamen} onClick={e=>this.showamenlist()}>
+                    <button className={styles.btnMoreamen} onClick={e=>this.showamenlist()} >
                         Show all {amenlength} amenities
                     </button>
                 </div>
