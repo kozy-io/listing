@@ -1,0 +1,385 @@
+.title{
+    color: #484848;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.123em;
+    padding-top: 6px;
+    padding-bottom: 6px
+}
+.location{
+    word-wrap: break-word ;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.375em;
+    color: #484848 ;
+}
+.summary{
+    width: 100%;
+    height: 240px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.tilo{
+    display: flex;
+    flex-direction: column;
+}
+.host div{
+    text-align: center
+}
+.hostname{
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+    font-size: 14px ;
+    font-weight: 400 ;
+    line-height: 1.28571em ;
+    color: rgb(118, 118, 118) ;
+    margin: 0px
+}
+.host img{
+    border-radius: 50%;
+    width: 64px;
+    height: 64px;
+}
+.hls{
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+    font-size: 14px;
+    line-height: 1.43;
+    color: #484848;
+    background-color: #fff;
+    margin: 0;
+    margin-top: 20px
+}
+.hl{
+    display: flex;
+    flex-direction: row;
+}
+.hlicon{
+    width: 24px;
+    vertical-align: top
+}
+.hlicon img{
+    width: 20x;
+    height: 20px;
+}
+.hltitle{
+    margin: 0px ;
+    word-wrap: break-word ;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif ;
+    font-size: 16px ;
+    font-weight: 600 ;
+    line-height: 1.375em ;
+    color: #484848 ;
+    margin-bottom: 16px;
+}
+.hlcontent{
+    margin: 0px ;
+    word-wrap: break-word ;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+    font-size: 16px ;
+    font-weight: 400 ;
+    line-height: 1.375em ;
+    color: #484848;
+}
+.linemg{
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+.line{
+    width: 100%;
+    border:0.5px #EBEBEB solid;
+}
+.descs{
+    width: 100%;
+    margin-top: 20px;
+}
+.generaldesc{
+    margin-bottom: 14px;
+}
+.desctitle:last-child{
+    margin-bottom: 0;
+}
+.readmore{
+    margin-top: 8px;
+    margin-bottom: 24px;
+    color: #008489;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.375em;
+    cursor: pointer;
+    text-decoration: none;
+    flex-direction: row;
+    align-items: center;
+}
+.readmore:hover, #readless:hover, #fakedesclink:hover{
+    text-decoration: underline;
+}
+.readless{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.readmore svg, .readless svg{
+    width: 10px;
+    height: 10px;
+    margin-left: 8px;
+    display: block;
+    fill: currentColor
+}
+.readless svg{
+    transform: rotate(180deg)
+}
+.desctitle{
+    margin: 0px ;
+    word-wrap: break-word ;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif ;
+    font-size: 16px ;
+    font-weight: 600 ;
+    line-height: 1.375em;
+    color: #484848;
+    margin-bottom:  8px;
+}
+.descs p{
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif ;
+    font-size: 16px ;
+    font-weight: 400 ;
+    line-height: 1.375em ;
+    color: #484848;
+}
+.readless{
+    margin-top: 8px;
+    margin-bottom: 24px;
+    color: #008489;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.375em;
+    cursor: pointer;
+    text-decoration: none;
+}
+.fakedesclink{
+    margin-top: 0px;
+    margin-bottom: 24px;
+    color: #008489;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.375em;
+    cursor: pointer;
+    text-decoration: none;
+}
+.roomarrg{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.roomarrg h2{
+    margin: 0px ;
+    margin-bottom: 16px;
+    word-wrap: break-word ;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif ;
+    font-size: 16px ;
+    font-weight: 600 ;
+    line-height: 1.375em ;
+    color: #484848 ;
+}
+.arrg{
+    width: 100%;
+    overflow: hidden;
+}
+.arrgarea{
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    height: 147px;
+    overflow: visible;
+    width: 100%;
+}
+.brarrg{
+    width: 33.333333333333336%  !important;
+    max-width: 33.333333333333336% ;
+    min-width: 33.333333333333336% ;
+    display: block;
+    vertical-align: top;
+    padding: 24px;
+    margin-left: 8px;
+    margin-right: 8px;
+    border: 1px solid #EBEBEB;
+    border-radius: 4px;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif ;
+    font-size: 16px ;
+    font-weight: 600 ;
+    line-height: 1.375em ;
+    color: #484848;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.brarrg svg{
+    width: 24px;
+    height: 24px;
+    margin-bottom: 24px;
+}
+
+.brtext{
+    margin: 0;
+}
+.bedinroom{
+    margin: 0px ;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif ;
+    font-size: 16px ;
+    font-weight: 200 ;
+}
+.arrgline{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    z-index: 0;
+    margin-left: -8px;
+    margin-right: -8px;
+}
+.btnNext{
+    position: absolute;
+    right: -8px;
+    transform: translateY(-50%);
+    z-index: 1;
+    transform: rotate(270deg);
+}
+.btnPre{
+    position: absolute;
+    left: -8px;
+    transform: translateY(-50%);
+    z-index: 1;
+    transform: rotate(90deg);
+}
+
+.btnNext span, .btnPre span{
+    top:50%
+}
+.btnNext button, .btnPre button{ 
+    width: 32px;
+    height: 32px;
+    display: inline-block !important;
+    cursor: pointer;
+    text-align: center;
+    line-height: 1;
+    border-radius: 50%;
+    position: relative;
+    touch-action: manipulation;
+    box-shadow: rgba(0, 0, 0, 0.14) 0px 1px 1px 1px;
+    border: 2px solid transparent;
+    background-color: #fff
+}
+.btnNext svg, .btnPre svg{
+    width: 10px;
+    height: 10px;   
+    display: inline-block;
+    fill:currentColor
+}
+
+
+.poplistback{
+    position: fixed ;
+    z-index: 2000 ;
+    top: 0px ;
+    right: 0px ;
+    bottom: 0px ;
+    left: 0px ;
+    overflow-y: auto ;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 64px;
+   
+}
+.poplist{
+    vertical-align: middle;
+    margin-left: 63px;
+    margin-right: 63px;
+    background-color: rgb(255, 255, 255) ;
+    position: relative ;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 10px 0px;
+    padding: 32px;
+}
+
+.poplisthead{
+    margin-bottom: 24px;
+}
+.poplisthead button{
+    padding: 20px;
+    margin: -20px;
+    cursor: pointer ;
+    background-color: transparent ;
+    display: block;
+    border: none;
+}
+.poplisthead svg{
+    width: 16px;
+    height: 16px;
+    display: block;
+    fill: #767676;
+}
+.poplisttitle{
+    margin: 0px;
+    padding-top: 2px ;
+    padding-bottom: 2px;
+    word-wrap: break-word ;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif ;
+    font-size: 24px ;
+    font-weight: 600 ;
+    line-height: 1.25em ;
+    color: #484848 ;   
+}
+
+
+.categorytitle{
+    overflow-wrap: break-word ;
+    margin: 0px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
+    font-size: 18px ;
+    font-weight: 600 ;
+    line-height: 1.44444em ;
+    color: rgb(72, 72, 72) ;
+}
+.categorycontent{
+    margin: 0px ;
+    word-wrap: break-word ;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+    font-size: 16px ;
+    font-weight: 300 ;
+    line-height: 1.375em ;
+    color: #484848;
+}
+.categorycomment{
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300 ;
+    line-height: 1.2857142857142858em;   
+}
+.poplistitem div:last-child{
+    margin-bottom: 8px;
+}
+.poplistitem div:last-child .linemg{
+    display: none;
+}
+
+.poplistcontent div:last-child .categorycontent{
+    text-decoration: line-through;
+}
+
+@media (max-width: 743px) {
+    .poplistback{
+      background: none;
+      padding: 0px;
+    }
+    .poplist{
+        width: 100%;
+        margin: 0;
+        background-color: rgb(255, 255, 255) ;
+        position: absolute ;
+    }
+} 

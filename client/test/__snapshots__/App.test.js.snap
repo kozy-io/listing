@@ -2,7 +2,7 @@
 
 exports[`App basic render test suite snapshots 1`] = `
 <div
-  id="main"
+  className="main"
 >
   <Description
     amenity={

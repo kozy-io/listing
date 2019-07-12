@@ -321,7 +321,9 @@
 <a name='L273'></a><a href='#L273'>273</a>
 <a name='L274'></a><a href='#L274'>274</a>
 <a name='L275'></a><a href='#L275'>275</a>
-<a name='L276'></a><a href='#L276'>276</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L276'></a><a href='#L276'>276</a>
+<a name='L277'></a><a href='#L277'>277</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -598,6 +600,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
 import Amenity from './Amenity';
+import styles from './style/Description.css';
 &nbsp;
 class Description extends React.Component{
     constructor(props){
@@ -675,13 +678,13 @@ class Description extends React.Component{
                 bedicon = 'm20.99 15.39-1.99-8.45v-5.44c0-.83-.68-1.5-1.5-1.5h-10a1.5 1.5 0 0 0 -1.5 1.5v5.44l-1.99 8.44-.01.12v5.01c0 .66.43 1.2 1.02 1.4-.01.03-.02.06-.02.09v1.5a.5.5 0 0 0 1 0v-1.5h13v1.5a.5.5 0 0 0 1 0v-1.5c0-.03-.01-.06-.02-.09a1.49 1.49 0 0 0 1.02-1.4v-5.01l-.01-.12zm-13.99-13.89a.5.5 0 0 1 .5-.5h9.99c.27 0 .5.23.5.5v4.5h-2v-2.51c.01-.82-.66-1.49-1.48-1.49h-4.02c-.82 0-1.49.67-1.49 1.49v2.51h-2zm8 1.99v4.02a.5.5 0 0 1 -.49.49h-4.02a.5.5 0 0 1 -.49-.49v-4.02c0-.27.22-.49.49-.49h4.02c.27 0 .49.22.49.49zm-8.01 3.63.01-.12h2v .51c0 .82.67 1.49 1.49 1.49h4.02c.82 0 1.49-.67 1.49-1.49v-.51h2l .01.12 1.86 7.88h-14.74l1.86-7.89zm13.01 13.39a.5.5 0 0 1 -.5.49h-14c-.28 0-.5-.22-.5-.49v-4.51h15z'
             }
             arrgs.push(
-                &lt;div id='brarrg' &gt;
+                &lt;div className={styles.brarrg} &gt;
                     &lt;svg viewBox={'0 0 24 24'} role={'presentation'} focusable={'false'}  &gt;
                         &lt;path d={bedicon} &gt;&lt;/path&gt;
                     &lt;/svg&gt;
                     &lt;div&gt;
-                        &lt;p id='brtext'&gt;bedroom {i}&lt;/p&gt;
-                        &lt;p id='bedinroom'&gt;{bedoption}&lt;/p&gt;
+                        &lt;p className={styles.brtext}&gt;bedroom {i}&lt;/p&gt;
+                        &lt;p className={styles.bedinroom}&gt;{bedoption}&lt;/p&gt;
                     &lt;/div&gt;
                 &lt;/div&gt;
             )
@@ -709,8 +712,8 @@ class Description extends React.Component{
                                                 {subcomment[index]}
                                             &lt;/div&gt;
                                         }                              
-                                        &lt;div id='linemg'&gt;
-                                            &lt;div id='line'&gt;&lt;/div&gt;
+                                        &lt;div className={styles.linemg}&gt;
+                                            &lt;div className={styles.line}&gt;&lt;/div&gt;
                                         &lt;/div&gt;
                                     &lt;/div&gt; 
                                 )}                       
@@ -727,26 +730,26 @@ class Description extends React.Component{
         var showpoplist = {display: this.state.showstatus? 'block': 'none'}
         return(
             &lt;div &gt;
-                &lt;div id='summary'&gt;
-                    &lt;div id='tilo'&gt;
-                        &lt;div id='title'&gt;{title}&lt;/div&gt;
-                        &lt;div id='location'&gt;{location}&lt;/div&gt;
+                &lt;div className={styles.summary}&gt;
+                    &lt;div className={styles.tilo}&gt;
+                        &lt;div className={styles.title}&gt;{title}&lt;/div&gt;
+                        &lt;div className={styles.location}&gt;{location}&lt;/div&gt;
                     &lt;/div&gt;
                     &lt;div &gt; 
                         { host &amp;&amp;
-                            &lt;div id='host'&gt;
+                            &lt;div className={styles.host}&gt;
                                 &lt;img src={host.pic}&gt;&lt;/img&gt;
-                                &lt;div id='hostname'&gt;{host.name}&lt;/div&gt;   
+                                &lt;div className={styles.hostname}&gt;{host.name}&lt;/div&gt;   
                             &lt;/div&gt;
                         } 
                     &lt;/div&gt;                  
                 &lt;/div&gt;
-                &lt;div id='hls'&gt;
+                &lt;div className={styles.hls}&gt;
                     { highlights &amp;&amp;
                         &lt;div&gt;
                             {Object.keys(highlights).map(hl=&gt;
-                                &lt;div id='hl' key={hl}&gt;
-                                    &lt;div id='hlicon'&gt;
+                                &lt;div className={styles.hl} key={hl}&gt;
+                                    &lt;div className={styles.hlicon}&gt;
                                         {(hl.includes('house')||hl.includes('room')||hl.includes('apartment')) &amp;&amp; 
                                             &lt;img src={"./house.png"}&gt;&lt;/img&gt;
                                         }    
@@ -766,66 +769,66 @@ class Description extends React.Component{
 <span class="branch-1 cbranch-no" title="branch not covered" >                                            &lt;img src={"./location.png"}&gt;&lt;/img&gt;</span>
                                         }                    
                                     &lt;/div&gt;
-                                    &lt;div id='hltitle'&gt;
+                                    &lt;div className={styles.hltitle}&gt;
                                         {hl}
-                                        &lt;div id='hlcontent'&gt;{highlights[hl]}&lt;/div&gt;
+                                        &lt;div className={styles.hlcontent}&gt;{highlights[hl]}&lt;/div&gt;
                                     &lt;/div&gt;
                                 &lt;/div&gt;
                             )}
                         &lt;/div&gt;
                     }                   
                 &lt;/div&gt;
-                &lt;div id='linemg'&gt;
-                        &lt;div id='line'&gt;&lt;/div&gt;
+                &lt;div className={styles.linemg}&gt;
+                        &lt;div className={styles.line}&gt;&lt;/div&gt;
                 &lt;/div&gt;
-                &lt;div id='descs'&gt;                    
+                &lt;div className={styles.descs}&gt;                    
                 { desc &amp;&amp;
                     &lt;div&gt;
-                        &lt;div id='generaldesc'&gt;
-                             &lt;p id='desccontent'&gt;{desc['General']}&lt;/p&gt;
+                        &lt;div className={styles.generaldesc}&gt;
+                             &lt;p className={styles.desccontent}&gt;{desc['General']}&lt;/p&gt;
                         &lt;/div&gt;
-                        &lt;div id='readmore' onClick={e=&gt;this.readmoredesc()} style={displayshowmore}&gt;
+                        &lt;div className={styles.readmore} onClick={e=&gt;this.readmoredesc()} style={displayshowmore}&gt;
                             &lt;div &gt;Read more about this space&lt;/div&gt;
                             &lt;svg viewBox={'0 0 18 18'} role={'presentation'} focusable={'false'}  &gt;
                                 &lt;path d={arrow} &gt;&lt;/path&gt;
                             &lt;/svg&gt;
                         &lt;/div&gt;
-                        &lt;div id='readmorearea' style={displaydesc}&gt;
+                        &lt;div className={styles.readmorearea}  style={displaydesc}&gt;
                             &lt;div&gt;
                                 {Object.keys(desc).slice(1).map(de=&gt;
-                                &lt;div id='desctitle' key={de}&gt;
+                                &lt;div className={styles.desctitle} key={de}&gt;
                                     {de}
-                                        &lt;p id='desccontent'&gt;{desc[de]}&lt;/p&gt;
+                                        &lt;p className={styles.desccontent}&gt;{desc[de]}&lt;/p&gt;
                                     &lt;/div&gt;
                                     )}
                             &lt;/div&gt;
-                            &lt;div id='fakedesclink' &gt;
+                            &lt;div className={styles.fakedesclink} &gt;
                                 &lt;div &gt;Learn about this number&lt;/div&gt;
                             &lt;/div&gt;
-                            &lt;div id='readless' onClick={<span class="fstat-no" title="function not covered" >e=</span>&gt;<span class="cstat-no" title="statement not covered" >this.readlessdesc()}</span> &gt;
+                            &lt;div className={styles.readless} onClick={<span class="fstat-no" title="function not covered" >e=</span>&gt;<span class="cstat-no" title="statement not covered" >this.readlessdesc()}</span> &gt;
                                 &lt;div &gt;Hide&lt;/div&gt;
                                 &lt;svg viewBox={'0 0 18 18'} role={'presentation'} focusable={'false'} &gt;
                                     &lt;path d={arrow} &gt;&lt;/path&gt;
                                 &lt;/svg&gt;
                             &lt;/div&gt;                           
                         &lt;/div&gt;   
-                        &lt;div id='fakedesclink' &gt;
+                        &lt;div className={styles.fakedesclink} &gt;
                             &lt;div &gt;Contact host&lt;/div&gt;
                         &lt;/div&gt;
                     &lt;/div&gt;
                 }
                 &lt;/div&gt;
-                &lt;div id='linemg'&gt;
-                    &lt;div id='line'&gt;&lt;/div&gt;
+                &lt;div className={styles.linemg}&gt;
+                    &lt;div className={styles.line}&gt;&lt;/div&gt;
                 &lt;/div&gt;
                 &lt;Amenity amenity={this.props.amenity} showamenitylist={this.showamenitylist.bind(this)} /&gt;
-                &lt;div id='linemg'&gt;
-                    &lt;div id='line'&gt;&lt;/div&gt;
+                &lt;div className={styles.linemg}&gt;
+                    &lt;div className={styles.line}&gt;&lt;/div&gt;
                 &lt;/div&gt;
-                &lt;div id='roomarrg'&gt;
+                &lt;div className={styles.roomarrg}&gt;
                     &lt;h2&gt;Sleeping arrangements&lt;/h2&gt;
-                    &lt;div id='arrgline'&gt;
-                        &lt;div id='btn-pre' onClick={e=&gt;this.getpre()}&gt;
+                    &lt;div className={styles.arrgline}&gt;
+                        &lt;div className={styles.btnPre} onClick={e=&gt;this.getpre()}&gt;
                             &lt;span&gt;
                                 &lt;button type={"button"}&gt;
                                     &lt;svg viewBox={'0 0 18 18'} role={'presentation'} focusable={'false'}  &gt;
@@ -834,12 +837,12 @@ class Description extends React.Component{
                                 &lt;/button&gt;
                             &lt;/span&gt;
                         &lt;/div&gt;
-                        &lt;div id='arrg'&gt;
-                            &lt;div id='arrgarea' style={movestyle}&gt;
+                        &lt;div className={styles.arrg}&gt;
+                            &lt;div className={styles.arrgarea}style={movestyle}&gt;
                                 {arrgs}
                             &lt;/div&gt;
                         &lt;/div&gt;
-                        &lt;div id='btn-next' onClick={e=&gt;this.getnext()}&gt;
+                        &lt;div className={styles.btnNext} onClick={e=&gt;this.getnext()}&gt;
                             &lt;span&gt;
                                 &lt;button type={"button"}&gt;
                                     &lt;svg viewBox={'0 0 18 18'} role={'presentation'} focusable={'false'}  &gt;
@@ -850,17 +853,17 @@ class Description extends React.Component{
                         &lt;/div&gt;
                     &lt;/div&gt;
                 &lt;/div&gt;
-                &lt;div id='poplistback' style={showpoplist} onClick={e=&gt;{this.handleClick(e)}}&gt;
-                    &lt;div id='poplist' ref={node =&gt; this.node = node} &gt;
-                        &lt;div id='poplisthead'&gt;
-                            &lt;button  id='btn-close' onClick={e=&gt;this.hideamenitylist()}&gt;
+                &lt;div className={styles.poplistback} style={showpoplist} onClick={e=&gt;{this.handleClick(e)}}&gt;
+                    &lt;div className={styles.poplist} ref={node =&gt; this.node = node} &gt;
+                        &lt;div className={styles.poplisthead}&gt;
+                            &lt;button  className={styles.btnClose} onClick={e=&gt;this.hideamenitylist()}&gt;
                                 &lt;svg viewBox={'0 0 24 24'} role={'img'} focusable={'false'} &gt;
                                     &lt;path d={'m23.25 24c-.19 0-.38-.07-.53-.22l-10.72-10.72-10.72 10.72c-.29.29-.77.29-1.06 0s-.29-.77 0-1.06l10.72-10.72-10.72-10.72c-.29-.29-.29-.77 0-1.06s.77-.29 1.06 0l10.72 10.72 10.72-10.72c.29-.29.77-.29 1.06 0s .29.77 0 1.06l-10.72 10.72 10.72 10.72c.29.29.29.77 0 1.06-.15.15-.34.22-.53.22'} &gt;&lt;/path&gt;
                                 &lt;/svg&gt;
                             &lt;/button&gt;
                         &lt;/div&gt;
-                        &lt;div id='poplisttitle'&gt;Amenities&lt;/div&gt;
-                        &lt;div id='poplistcontent' &gt;                           
+                        &lt;div className={styles.poplisttitle}&gt;Amenities&lt;/div&gt;
+                        &lt;div className={styles.poplistcontent} &gt;                           
                                 {poplistitems}    
                         &lt;/div&gt;
                     &lt;/div&gt;
@@ -877,7 +880,7 @@ export default Description;</pre></td></tr>
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Jul 11 2019 17:34:39 GMT-0700 (PDT)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Jul 11 2019 21:02:52 GMT-0700 (PDT)
 </div>
 </div>
 <script src="prettify.js"></script>

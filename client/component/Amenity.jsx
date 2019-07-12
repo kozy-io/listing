@@ -1,4 +1,6 @@
 import React from 'react';
+import styles from './style/Amenity.css';
+
 class Amenity extends React.Component{
     constructor(props){
         super(props)
@@ -29,14 +31,14 @@ class Amenity extends React.Component{
             hangers: 'm23.75 16.07-11.75-6.9v-1.23c1.08-.27 2-1.34 2-2.44a2.5 2.5 0 1 0 -5 0 .5.5 0 0 0 1 0 1.5 1.5 0 1 1 3 0c0 .72-.78 1.5-1.5 1.5a.5.5 0 0 0 -.5.5v1.77l-10.77 6.81a.48.48 0 0 0 -.23.41v.01c0 .26.19.51.5.51h23c .32 0 .51-.26.5-.52v-.01a.48.48 0 0 0 -.25-.41zm-21.52-.07 9.36-5.92 10.07 5.92z',
         }   
         var amenkeys = Object.keys(amenIcon);
-        console.log('keyproperty',amenkeys)
+        // console.log('keyproperty',amenkeys)
         return(
-            <div id='amenityarea' >                
-                <div id='amenhead'>Amenities</div>
-                <div id='amenarea'>
+            <div className={styles.amenityarea} >                
+                <div className={styles.amenhead}>Amenities</div>
+                <div className={styles.amenarea}>
                 {amenitems &&
-                    <div id='amenarealeft'>             
-                        <div className='amenitem'>
+                    <div className={styles.amenarealeft}>             
+                        <div className={styles.amenitem}>
                             {amenkeys.map(icon=> {
                                 if(amenitems[0].toLowerCase().includes(icon)){
                                     return (<svg viewBox={'0 0 24 24'} role={'presentation'} focusable={'false'}  >
@@ -59,8 +61,8 @@ class Amenity extends React.Component{
                     </div>
                 }
                  {amenitems &&
-                    <div id='amenarearight'>             
-                        <div className='amenitem'>
+                    <div className={styles.amenarearight}>             
+                        <div className={styles.amenitem}>
                             {amenkeys.map(icon=> {
                                 if(amenitems[2].toLowerCase().includes(icon)){
                                     return (<svg viewBox={'0 0 24 24'} role={'presentation'} focusable={'false'}  >
@@ -70,7 +72,7 @@ class Amenity extends React.Component{
                             })}
                             {amenitems[2]}
                         </div>
-                        <div className='amenitem'>
+                        <div className={styles.amenitem}>
                             {amenkeys.map(icon=> {
                                 if(amenitems[3].toLowerCase().includes(icon)){
                                     return (<svg viewBox={'0 0 24 24'} role={'presentation'} focusable={'false'}  >
@@ -83,8 +85,8 @@ class Amenity extends React.Component{
                     </div>
                 }      
                 </div>
-                <div id='moreamen'>
-                    <button id='btn-moreamen' onClick={e=>this.showamenlist()}>
+                <div className={styles.moreamen}>
+                    <button className={styles.btnMoreamen} onClick={e=>this.showamenlist()}>
                         Show all {amenlength} amenities
                     </button>
                 </div>

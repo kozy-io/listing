@@ -49,19 +49,19 @@ describe('Description basic rendering test suite', () => {
 
     test('render listing house titel without crashing', () => {
         const description = shallow(<Description />) 
-        expect(description.find('#title').exists()).toBeTruthy() 
+        expect(description.find('.title').exists()).toBeTruthy() 
     });
     test('render listing house titel with correct text', () => {
         const description = shallow(<Description />) 
         description.setProps({
             title: "Quis ab sint veritatis"
         });
-        expect(description.find('#title').text()).toEqual("Quis ab sint veritatis")
+        expect(description.find('.title').text()).toEqual("Quis ab sint veritatis")
     });
 
     test('render listing house location without crashing', () => {
         const description = shallow(<Description />) 
-        expect(description.find('#location').exists()).toBeTruthy() 
+        expect(description.find('.location').exists()).toBeTruthy() 
     });
 
     test('render listing house location with correct text', () => {
@@ -69,7 +69,7 @@ describe('Description basic rendering test suite', () => {
         description.setProps({
             location: "Schneidermouth"
         });
-        expect(description.find('#location').text()).toEqual("Schneidermouth")
+        expect(description.find('.location').text()).toEqual("Schneidermouth")
     });
 
     test('host div has 2 children ', () => {
@@ -81,7 +81,7 @@ describe('Description basic rendering test suite', () => {
             }
         })       
         // console.log('===',description.debug());
-        expect(description.find('#host').children().length).toBe(2)
+        expect(description.find('.host').children().length).toBe(2)
       });
 
       test(' highlight div has 4 children ', () => {
@@ -94,7 +94,7 @@ describe('Description basic rendering test suite', () => {
                 "Sparkling clean":"In necessitatibus id."
             },         
         })       
-        expect(description.find('#hls').children().children().length).toBe(4)
+        expect(description.find('.hls').children().children().length).toBe(4)
       });
       test('render correct amount of bedrooms in sleeping arrangement area', () => {
         const description =  mount(<Description />) 
@@ -110,7 +110,7 @@ describe('Description basic rendering test suite', () => {
             },
         })  
         // console.log(description.debug())
-        expect(description.find('#arrgarea').children().length).toBe(roomCount)
+        expect(description.find('.arrgarea').children().length).toBe(roomCount)
       });
 });
 describe('Description animation test suite', () => {
@@ -136,7 +136,7 @@ describe('Description animation test suite', () => {
                 "License or registartion number":"STR-3921741"
             }         
         })
-        description.find('#readmore').simulate('click')
+        description.find('.readmore').simulate('click')
         expect(description.state("showmoredesc")).toEqual(true)
       });
 
@@ -148,7 +148,7 @@ describe('Description animation test suite', () => {
 
       test('show amenity list after click button', () => {
         const description =  mount(<Description />) 
-        description.find('#btn-moreamen').simulate('click')
+        description.find('.btnMoreamen').simulate('click')
         expect(description.state("showstatus")).toEqual(true)
       });
       test('show amenity list after click button', () => {
@@ -156,30 +156,30 @@ describe('Description animation test suite', () => {
         description.setState({
             showstatus: true
         })   
-        description.find('#btn-close').simulate('click')
+        description.find('.btnClose').simulate('click')
         expect(description.state("showstatus")).toEqual(false)
       });
 
       //////
       test('no slide animition before click button in sleeping arrangement area', () => {
         const description =  mount(<Description />) 
-        const degree = description.find('#arrgarea').props('style').style.transform.split(/[()%]+/)[1]
+        const degree = description.find('.arrgarea').props('style').style.transform.split(/[()%]+/)[1]
         expect(degree).toEqual('0')
       });
 
       test('slide left after click previous button in sleeping arrangement area', () => {
         const description =  mount(<Description />) 
-        const degree = description.find('#arrgarea').props('style').style.transform.split(/[()%]+/)[1]
-        description.find('#btn-pre').simulate('click')
+        const degree = description.find('.arrgarea').props('style').style.transform.split(/[()%]+/)[1]
+        description.find('.btnPre').simulate('click')
         const newDegree = (parseFloat(degree)+(100/3)).toString()+'%'
-        expect(description.find('#arrgarea').props('style').style.transform.split(/[()]+/)[1]).toEqual(newDegree)
+        expect(description.find('.arrgarea').props('style').style.transform.split(/[()]+/)[1]).toEqual(newDegree)
       });
 
       test('slide right after click next button in sleeping arrangement area', () => {
         const description =  mount(<Description />) 
-        const degree = description.find('#arrgarea').props('style').style.transform.split(/[()%]+/)[1]
-        description.find('#btn-next').simulate('click')
+        const degree = description.find('.arrgarea').props('style').style.transform.split(/[()%]+/)[1]
+        description.find('.btnNext').simulate('click')
         const newDegree = (parseFloat(degree)-(100/3)).toString()+'%'
-        expect(description.find('#arrgarea').props('style').style.transform.split(/[()]+/)[1]).toEqual(newDegree)
+        expect(description.find('.arrgarea').props('style').style.transform.split(/[()]+/)[1]).toEqual(newDegree)
       });
 });

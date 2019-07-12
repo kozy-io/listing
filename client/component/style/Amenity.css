@@ -1,0 +1,60 @@
+.amenhead{
+    margin: 0px;
+    word-wrap: break-word ;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+    font-size: 16px ;
+    font-weight: 600 ;
+    line-height: 1.375em ;
+    color: #484848;
+    margin-bottom: 16px;
+}
+.moreamen{
+    margin-top: 8px;
+}
+.btnMoreamen{
+    color: #008489;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+    text-decoration: none;
+    word-wrap: break-word ;
+    font-size: 16px ;
+    font-weight: 600 ;
+    line-height: 1.375em;
+    border: none;
+    padding: 0;
+}
+.btnMoreamen:hover{
+    text-decoration: underline
+}
+.amenarea{
+    display: flex;
+    flex-direction: row;
+}
+.amenarealeft, .amenarearight{
+    padding-left: 8px ;
+    padding-right: 8px ;
+    min-height: 1px ;
+    position: relative ;
+    width: 50% ;
+}
+
+.amenitem{
+    margin: 0px ;
+    padding-left: 8px ;
+    padding-right: 8px ;
+    word-wrap: break-word ;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif ;
+    font-size: 16px ;
+    font-weight: 200 ;
+    line-height: 1.375em ;
+    color: #484848;
+    margin-bottom: 16px; 
+    display: flex;
+    align-items: center;
+}
+.amenitem svg{
+    height: 19px;
+    width: 19px;
+    fill: currentcolor;
+    padding: 1px;
+    margin-right: 5px;
+}

@@ -65,24 +65,24 @@ describe('App basic render test suite', () => {
     })
     it('render child div' , ()=>{
         const app = shallow(<App />);
-        expect(app.exists('#main')).toBeTruthy();
+        expect(app.exists('.main')).toBeTruthy();
     })
 });
 
-describe('App funcationality test suite', () => {
-    it('GET request' , ()=>{
-        const app = shallow(<App />);
-        beforeEach(()=>{
-            if(app.state('title')){
-                console.log('waiting done');
-                done()
-            }
-        },2000)
-        afterEach(()=>{
-            expect(app.state('title')).toEqual('?????');
+// describe('App funcationality test suite', () => {
+//     it('GET request' , ()=>{
+//         const app = shallow(<App />);
+//         beforeEach(()=>{
+//             if(app.state('title')){
+//                 console.log('waiting done');
+//                 done()
+//             }
+//         },2000)
+//         afterEach(()=>{
+//             expect(app.state('title')).toEqual('?????');
 
-        })
+//         })
       
-    })
+//     })
    
-});
+// });

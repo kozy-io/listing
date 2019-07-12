@@ -1,5 +1,6 @@
 import React from 'react';
 import Amenity from './Amenity';
+import styles from './style/Description.css';
 
 class Description extends React.Component{
     constructor(props){
@@ -77,13 +78,13 @@ class Description extends React.Component{
                 bedicon = 'm20.99 15.39-1.99-8.45v-5.44c0-.83-.68-1.5-1.5-1.5h-10a1.5 1.5 0 0 0 -1.5 1.5v5.44l-1.99 8.44-.01.12v5.01c0 .66.43 1.2 1.02 1.4-.01.03-.02.06-.02.09v1.5a.5.5 0 0 0 1 0v-1.5h13v1.5a.5.5 0 0 0 1 0v-1.5c0-.03-.01-.06-.02-.09a1.49 1.49 0 0 0 1.02-1.4v-5.01l-.01-.12zm-13.99-13.89a.5.5 0 0 1 .5-.5h9.99c.27 0 .5.23.5.5v4.5h-2v-2.51c.01-.82-.66-1.49-1.48-1.49h-4.02c-.82 0-1.49.67-1.49 1.49v2.51h-2zm8 1.99v4.02a.5.5 0 0 1 -.49.49h-4.02a.5.5 0 0 1 -.49-.49v-4.02c0-.27.22-.49.49-.49h4.02c.27 0 .49.22.49.49zm-8.01 3.63.01-.12h2v .51c0 .82.67 1.49 1.49 1.49h4.02c.82 0 1.49-.67 1.49-1.49v-.51h2l .01.12 1.86 7.88h-14.74l1.86-7.89zm13.01 13.39a.5.5 0 0 1 -.5.49h-14c-.28 0-.5-.22-.5-.49v-4.51h15z'
             }
             arrgs.push(
-                <div id='brarrg' >
+                <div className={styles.brarrg} >
                     <svg viewBox={'0 0 24 24'} role={'presentation'} focusable={'false'}  >
                         <path d={bedicon} ></path>
                     </svg>
                     <div>
-                        <p id='brtext'>bedroom {i}</p>
-                        <p id='bedinroom'>{bedoption}</p>
+                        <p className={styles.brtext}>bedroom {i}</p>
+                        <p className={styles.bedinroom}>{bedoption}</p>
                     </div>
                 </div>
             )
@@ -111,8 +112,8 @@ class Description extends React.Component{
                                                 {subcomment[index]}
                                             </div>
                                         }                              
-                                        <div id='linemg'>
-                                            <div id='line'></div>
+                                        <div className={styles.linemg}>
+                                            <div className={styles.line}></div>
                                         </div>
                                     </div> 
                                 )}                       
@@ -129,26 +130,26 @@ class Description extends React.Component{
         var showpoplist = {display: this.state.showstatus? 'block': 'none'}
         return(
             <div >
-                <div id='summary'>
-                    <div id='tilo'>
-                        <div id='title'>{title}</div>
-                        <div id='location'>{location}</div>
+                <div className={styles.summary}>
+                    <div className={styles.tilo}>
+                        <div className={styles.title}>{title}</div>
+                        <div className={styles.location}>{location}</div>
                     </div>
                     <div > 
                         { host &&
-                            <div id='host'>
+                            <div className={styles.host}>
                                 <img src={host.pic}></img>
-                                <div id='hostname'>{host.name}</div>   
+                                <div className={styles.hostname}>{host.name}</div>   
                             </div>
                         } 
                     </div>                  
                 </div>
-                <div id='hls'>
+                <div className={styles.hls}>
                     { highlights &&
                         <div>
                             {Object.keys(highlights).map(hl=>
-                                <div id='hl' key={hl}>
-                                    <div id='hlicon'>
+                                <div className={styles.hl} key={hl}>
+                                    <div className={styles.hlicon}>
                                         {(hl.includes('house')||hl.includes('room')||hl.includes('apartment')) && 
                                             <img src={"./house.png"}></img>
                                         }    
@@ -168,66 +169,66 @@ class Description extends React.Component{
                                             <img src={"./location.png"}></img>
                                         }                    
                                     </div>
-                                    <div id='hltitle'>
+                                    <div className={styles.hltitle}>
                                         {hl}
-                                        <div id='hlcontent'>{highlights[hl]}</div>
+                                        <div className={styles.hlcontent}>{highlights[hl]}</div>
                                     </div>
                                 </div>
                             )}
                         </div>
                     }                   
                 </div>
-                <div id='linemg'>
-                        <div id='line'></div>
+                <div className={styles.linemg}>
+                        <div className={styles.line}></div>
                 </div>
-                <div id='descs'>                    
+                <div className={styles.descs}>                    
                 { desc &&
                     <div>
-                        <div id='generaldesc'>
-                             <p id='desccontent'>{desc['General']}</p>
+                        <div className={styles.generaldesc}>
+                             <p className={styles.desccontent}>{desc['General']}</p>
                         </div>
-                        <div id='readmore' onClick={e=>this.readmoredesc()} style={displayshowmore}>
+                        <div className={styles.readmore} onClick={e=>this.readmoredesc()} style={displayshowmore}>
                             <div >Read more about this space</div>
                             <svg viewBox={'0 0 18 18'} role={'presentation'} focusable={'false'}  >
                                 <path d={arrow} ></path>
                             </svg>
                         </div>
-                        <div id='readmorearea' style={displaydesc}>
+                        <div className={styles.readmorearea}  style={displaydesc}>
                             <div>
                                 {Object.keys(desc).slice(1).map(de=>
-                                <div id='desctitle' key={de}>
+                                <div className={styles.desctitle} key={de}>
                                     {de}
-                                        <p id='desccontent'>{desc[de]}</p>
+                                        <p className={styles.desccontent}>{desc[de]}</p>
                                     </div>
                                     )}
                             </div>
-                            <div id='fakedesclink' >
+                            <div className={styles.fakedesclink} >
                                 <div >Learn about this number</div>
                             </div>
-                            <div id='readless' onClick={e=>this.readlessdesc()} >
+                            <div className={styles.readless} onClick={e=>this.readlessdesc()} >
                                 <div >Hide</div>
                                 <svg viewBox={'0 0 18 18'} role={'presentation'} focusable={'false'} >
                                     <path d={arrow} ></path>
                                 </svg>
                             </div>                           
                         </div>   
-                        <div id='fakedesclink' >
+                        <div className={styles.fakedesclink} >
                             <div >Contact host</div>
                         </div>
                     </div>
                 }
                 </div>
-                <div id='linemg'>
-                    <div id='line'></div>
+                <div className={styles.linemg}>
+                    <div className={styles.line}></div>
                 </div>
                 <Amenity amenity={this.props.amenity} showamenitylist={this.showamenitylist.bind(this)} />
-                <div id='linemg'>
-                    <div id='line'></div>
+                <div className={styles.linemg}>
+                    <div className={styles.line}></div>
                 </div>
-                <div id='roomarrg'>
+                <div className={styles.roomarrg}>
                     <h2>Sleeping arrangements</h2>
-                    <div id='arrgline'>
-                        <div id='btn-pre' onClick={e=>this.getpre()}>
+                    <div className={styles.arrgline}>
+                        <div className={styles.btnPre} onClick={e=>this.getpre()}>
                             <span>
                                 <button type={"button"}>
                                     <svg viewBox={'0 0 18 18'} role={'presentation'} focusable={'false'}  >
@@ -236,12 +237,12 @@ class Description extends React.Component{
                                 </button>
                             </span>
                         </div>
-                        <div id='arrg'>
-                            <div id='arrgarea' style={movestyle}>
+                        <div className={styles.arrg}>
+                            <div className={styles.arrgarea}style={movestyle}>
                                 {arrgs}
                             </div>
                         </div>
-                        <div id='btn-next' onClick={e=>this.getnext()}>
+                        <div className={styles.btnNext} onClick={e=>this.getnext()}>
                             <span>
                                 <button type={"button"}>
                                     <svg viewBox={'0 0 18 18'} role={'presentation'} focusable={'false'}  >
@@ -252,17 +253,17 @@ class Description extends React.Component{
                         </div>
                     </div>
                 </div>
-                <div id='poplistback' style={showpoplist} onClick={e=>{this.handleClick(e)}}>
-                    <div id='poplist' ref={node => this.node = node} >
-                        <div id='poplisthead'>
-                            <button  id='btn-close' onClick={e=>this.hideamenitylist()}>
+                <div className={styles.poplistback} style={showpoplist} onClick={e=>{this.handleClick(e)}}>
+                    <div className={styles.poplist} ref={node => this.node = node} >
+                        <div className={styles.poplisthead}>
+                            <button  className={styles.btnClose} onClick={e=>this.hideamenitylist()}>
                                 <svg viewBox={'0 0 24 24'} role={'img'} focusable={'false'} >
                                     <path d={'m23.25 24c-.19 0-.38-.07-.53-.22l-10.72-10.72-10.72 10.72c-.29.29-.77.29-1.06 0s-.29-.77 0-1.06l10.72-10.72-10.72-10.72c-.29-.29-.29-.77 0-1.06s.77-.29 1.06 0l10.72 10.72 10.72-10.72c.29-.29.77-.29 1.06 0s .29.77 0 1.06l-10.72 10.72 10.72 10.72c.29.29.29.77 0 1.06-.15.15-.34.22-.53.22'} ></path>
                                 </svg>
                             </button>
                         </div>
-                        <div id='poplisttitle'>Amenities</div>
-                        <div id='poplistcontent' >                           
+                        <div className={styles.poplisttitle}>Amenities</div>
+                        <div className={styles.poplistcontent} >                           
                                 {poplistitems}    
                         </div>
                     </div>
