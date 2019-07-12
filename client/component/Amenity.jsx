@@ -38,20 +38,20 @@ class Amenity extends React.Component{
                 <div className={styles.amenarea}>
                 {amenitems &&
                     <div className={styles.amenarealeft}>             
-                        <div className={styles.amenitem}>
+                        <div className={styles.amenitem} >
                             {amenkeys.map(icon=> {
                                 if(amenitems[0].toLowerCase().includes(icon)){
-                                    return (<svg viewBox={'0 0 24 24'} role={'presentation'} focusable={'false'}  >
+                                    return (<svg viewBox={'0 0 24 24'} role={'presentation'} focusable={'false'}  key={amenitems[0]}>
                                         <path d={amenIcon[icon]} ></path>
                                     </svg>)
                                 } 
                             })}
                             {amenitems[0]}
                         </div>
-                        <div className='amenitem'>
+                        <div className={styles.amenitem} >
                             {amenkeys.map(icon=> {
                                 if(amenitems[1].toLowerCase().includes(icon)){
-                                    return (<svg viewBox={'0 0 24 24'} role={'presentation'} focusable={'false'}  >
+                                    return (<svg viewBox={'0 0 24 24'} role={'presentation'} focusable={'false'}  key={amenitems[1]}>
                                         <path d={amenIcon[icon]} ></path>
                                     </svg>)
                                 } 
@@ -62,20 +62,20 @@ class Amenity extends React.Component{
                 }
                  {amenitems &&
                     <div className={styles.amenarearight}>             
-                        <div className={styles.amenitem}>
+                        <div className={styles.amenitem} >
                             {amenkeys.map(icon=> {
                                 if(amenitems[2].toLowerCase().includes(icon)){
-                                    return (<svg viewBox={'0 0 24 24'} role={'presentation'} focusable={'false'}  >
+                                    return (<svg viewBox={'0 0 24 24'} role={'presentation'} focusable={'false'}  key={amenitems[2]}>
                                         <path d={amenIcon[icon]} ></path>
                                     </svg>)
                                 } 
                             })}
                             {amenitems[2]}
                         </div>
-                        <div className={styles.amenitem}>
+                        <div className={styles.amenitem} >
                             {amenkeys.map(icon=> {
                                 if(amenitems[3].toLowerCase().includes(icon)){
-                                    return (<svg viewBox={'0 0 24 24'} role={'presentation'} focusable={'false'}  >
+                                    return (<svg viewBox={'0 0 24 24'} role={'presentation'} focusable={'false'} key={amenitems[3]} >
                                         <path d={amenIcon[icon]} ></path>
                                     </svg>)
                                 } 

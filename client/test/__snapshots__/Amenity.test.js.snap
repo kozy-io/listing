@@ -25,6 +25,7 @@ exports[`Amenity test suite snapshots 1`] = `
       >
         <svg
           focusable="false"
+          key="Cable TV"
           role="presentation"
           viewBox="0 0 24 24"
         >
@@ -48,6 +49,7 @@ exports[`Amenity test suite snapshots 1`] = `
       >
         <svg
           focusable="false"
+          key="Hair dryer"
           role="presentation"
           viewBox="0 0 24 24"
         >

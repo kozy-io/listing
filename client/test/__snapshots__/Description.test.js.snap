@@ -295,6 +295,7 @@ exports[`Description basic rendering test suite snapshot 1`] = `
         >
           <div
             className="brarrg"
+            key="bedroom 1"
           >
             <svg
               focusable="false"
