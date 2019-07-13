@@ -4,7 +4,6 @@ import $ from 'jquery';
 import Description from './Description';
 import styles from './style/App.css';
 
-
 class App extends React.Component {
     constructor(props){
         super(props);
@@ -18,18 +17,19 @@ class App extends React.Component {
             amenity: {},
         }
     }
+
     componentDidMount(){
         var num = faker.random.number({min:1, max:100});
-        this.getDescinfo(num);
-        this.getAmeninfo(num);
+        this.getDescInfo(num);
+        this.getAmenInfo(num);
     }
-    getDescinfo(num){
+
+    getDescInfo(num){
         $.ajax({
             method:'GET',
             url: '/listing/desc/' + num,
             contentType: 'application/json',
             success: (desc)=>{
-                // console.log(desc)
                 this.setState({
                     title: desc.title,
                     location: desc.location,
@@ -38,28 +38,24 @@ class App extends React.Component {
                     desc: desc.desc,
                     detail: desc.detail    
                 })
-                
             }
         })
-
     }
-    getAmeninfo(num){
+
+    getAmenInfo(num){
         $.ajax({
             method:'GET',
             url: '/listing/amenity/' + num,
             contentType: 'application/json',
             success: (amenity)=>{
-                // console.log('amenity',amenity)
                 this.setState({
                     amenity: amenity.amenities
                 })
-                
             }
         })
     }
     
     render() {
-        // console.log('id',this.state)
         return (
             <div className={styles.main}>
                 <Description  
