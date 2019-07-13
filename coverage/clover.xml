@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1562957633094" clover="3.2.0">
-  <project timestamp="1562957633094" name="All files">
+<coverage generated="1562994706861" clover="3.2.0">
+  <project timestamp="1562994706861" name="All files">
     <metrics statements="86" coveredstatements="67" conditionals="64" coveredconditionals="47" methods="38" coveredmethods="30" elements="188" coveredelements="144" complexity="0" loc="86" ncloc="86" packages="1" files="3" classes="3"/>
     <file name="Amenity.jsx" path="/Users/yisun/Desktop/Listing/client/component/Amenity.jsx">
       <metrics statements="19" coveredstatements="17" conditionals="16" coveredconditionals="14" methods="8" coveredmethods="8"/>
