@@ -41,7 +41,7 @@ class App extends React.Component {
             }
         })
     }
-    
+
     getAmenInfo(num){
         $.ajax({
             method:'GET',
@@ -51,7 +51,6 @@ class App extends React.Component {
                 this.setState({
                     amenity: amenity.amenities
                 })
-                
             }
         })
     }
@@ -59,7 +58,9 @@ class App extends React.Component {
     render() {
         return (
             <div className={styles.main}>
-                <Description  info={this.state} />
+                <Description  
+                title={this.state.title} location={this.state.location} host={this.state.host} highlights={this.state.highlights} desc={this.state.desc} detail={this.state.detail} amenity={this.state.amenity}
+                />
             </div>
         )
     }
