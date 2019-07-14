@@ -186,23 +186,24 @@
     color: #484848 ;
 }
 .arrg{
-    width: 100%;
     overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
 }
 .arrgarea{
     display: flex;
     justify-content: flex-start;
-    position: relative;
+    width: 200%;
     height: 147px;
+    left: -100%;
     overflow: visible;
-    width: 100%;
+    transition: -ms-transform 0.5s ease 0s, -webkit-transform 0.5s ease 0s, transform 0.5s ease 0s !important;
+    white-space: nowrap !important;
+    
 }
 .brarrg{
-    width: 33.333333333333336%  !important;
-    max-width: 33.333333333333336% ;
-    min-width: 33.333333333333336% ;
-    display: block;
-    vertical-align: top;
+    width:  171.33px !important;
     padding: 24px;
     margin-left: 8px;
     margin-right: 8px;
