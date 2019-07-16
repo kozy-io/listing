@@ -24,7 +24,9 @@ class App extends React.Component {
     }
 
     getDescInfo(){
-        var id = window.location.href.split('/')[4];
+        const parts = window.location.href.split('/');
+        const id = parts[parts.length - 2];
+
         $.ajax({
             method:'GET',
             url: `/listing/desc/${id}`,
@@ -43,7 +45,8 @@ class App extends React.Component {
     }
 
     getAmenInfo(){
-        var id = window.location.href.split('/')[4];
+        const parts = window.location.href.split('/');
+        const id = parts[parts.length - 2];
         $.ajax({
             method:'GET',
             url: `/listing/amenity/${id}`,
