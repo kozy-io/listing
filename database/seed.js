@@ -178,16 +178,12 @@ for(var i=1;i<=100;i++){
     db.Desc.create(generatedesc(i),(err,res)=>{
         if(err){
             console.log(err)
-        }  else {
-            console.log('desc data insert success')
-        }
+        }  
     });
     db.Amenity.create(generateamen(i),(err,res)=>{
         if(err){
             console.log(err)
-        }  else {
-            console.log('amenity data insert success')
-        }
+        }  
     });
 }
 

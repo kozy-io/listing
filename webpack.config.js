@@ -4,8 +4,8 @@ var path = require('path');
       watch: true,
       entry: path.resolve(__dirname, 'client/index.js'),
       output: {
-        path: path.resolve(__dirname,'../proxyServer_yi/public'),
-        filename: 'bundle_listing.js'
+        path: path.resolve(__dirname,'public'),
+        filename: 'bundle.js'
       },
       module: {
         rules: [
