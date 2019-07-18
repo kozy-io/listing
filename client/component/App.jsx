@@ -26,7 +26,6 @@ class App extends React.Component {
     getDescInfo(){
         const parts = window.location.href.split('/');
         const id = parts[parts.length - 2];
-
         $.ajax({
             method:'GET',
             url: `/listing/desc/${id}`,

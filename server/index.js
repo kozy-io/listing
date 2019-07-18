@@ -4,10 +4,9 @@ const app = express();
 const bodyParser = require('body-parser');
 const db = require('../database')
 const port = 3000;
-const path = require('path');
 
 app.use(bodyParser.json());
-app.use('/listing/:listingID',express.static("public"))
+app.use('/:listingID',express.static("public"))
 
 app.get('/listing/desc/:listingID',(req,res)=>{
     var id = req.params.listingID

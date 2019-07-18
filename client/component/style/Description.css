@@ -25,9 +25,13 @@
 .tilo{
     display: flex;
     flex-direction: column;
+    margin-left: 8px;
+    margin-right: 8px;
 }
-.host div{
-    text-align: center
+.host {
+    text-align: center;
+    margin-left: 8px;
+    margin-right: 8px;
 }
 .hostname{
     font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;

@@ -10,7 +10,6 @@ class Amenity extends React.Component{
     }
    
     render(){ 
-        // console.log('props in Amenity',this.props)  
         if(this.props.amenity){
             var basicitems = this.props.amenity.Basic
         }
@@ -22,8 +21,6 @@ class Amenity extends React.Component{
                 amenlength += Object.keys(this.props.amenity[allCategoryAmen[i]]).length
             }
         }
-        // console.log('allcate',allCategoryAmen);
-        // console.log('length',amenlength)
         var amenIcon = {
             parking: 'm12 0c-6.63 0-12 5.37-12 12s5.37 12 12 12 12-5.37 12-12-5.37-12-12-12zm0 23c-6.07 0-11-4.92-11-11s4.93-11 11-11 11 4.93 11 11-4.93 11-11 11zm .5-17h-4.5v11.5a.5.5 0 0 0 1 0v-4.5h3.5c1.93 0 3.5-1.57 3.5-3.5s-1.57-3.5-3.5-3.5zm0 6h-3.5v-5h3.5c1.38 0 2.5 1.12 2.5 2.5s-1.12 2.5-2.5 2.5z',
             wifi: 'm12 15a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm0 5a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm5.92-5.78a.5.5 0 1 1 -.84.55c-1.19-1.81-3.07-2.77-5.08-2.77s-3.89.96-5.08 2.78a.5.5 0 0 1 -.84-.55c1.38-2.1 3.58-3.23 5.92-3.23s4.54 1.13 5.92 3.23zm2.98-3.03a.5.5 0 1 1 -.79.61c-1.66-2.14-5.22-3.8-8.11-3.8-2.83 0-6.26 1.62-8.12 3.82a.5.5 0 0 1 -.76-.65c2.05-2.42 5.75-4.17 8.88-4.17 3.19 0 7.05 1.8 8.9 4.19zm2.95-2.33a.5.5 0 0 1 -.71-.02c-2.94-3.07-6.71-4.84-11.14-4.84s-8.2 1.77-11.14 4.85a.5.5 0 0 1 -.72-.69c3.12-3.27 7.14-5.16 11.86-5.16s8.74 1.89 11.86 5.16a.5.5 0 0 1 -.02.71z',
@@ -36,7 +33,7 @@ class Amenity extends React.Component{
             hangers: 'm23.75 16.07-11.75-6.9v-1.23c1.08-.27 2-1.34 2-2.44a2.5 2.5 0 1 0 -5 0 .5.5 0 0 0 1 0 1.5 1.5 0 1 1 3 0c0 .72-.78 1.5-1.5 1.5a.5.5 0 0 0 -.5.5v1.77l-10.77 6.81a.48.48 0 0 0 -.23.41v.01c0 .26.19.51.5.51h23c .32 0 .51-.26.5-.52v-.01a.48.48 0 0 0 -.25-.41zm-21.52-.07 9.36-5.92 10.07 5.92z',
         }   
         var amenkeys = Object.keys(amenIcon);
-        // console.log('keyproperty',amenkeys)
+        
         return(
             <div className={styles.amenityarea} >                
                 <div className={styles.amenhead}>Amenities</div>

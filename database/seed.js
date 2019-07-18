@@ -178,12 +178,18 @@ for(var i=1;i<=100;i++){
     db.Desc.create(generatedesc(i),(err,res)=>{
         if(err){
             console.log(err)
-        }  
+        }  else {
+            db.mongoose.connection.close();
+        }
     });
     db.Amenity.create(generateamen(i),(err,res)=>{
         if(err){
             console.log(err)
-        }  
+        }  else {
+            db.mongoose.connection.close();
+        }
     });
 }
+
+
 
