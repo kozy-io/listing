@@ -2,8 +2,8 @@
 
 
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://database:27017/house',{ useNewUrlParser: true } )
-// mongoose.connect('mongodb://172.17.0.2:27017/house',{ useNewUrlParser: true } )
+// mongoose.connect('mongodb://database:27017/house',{ useNewUrlParser: true } )
+mongoose.connect('mongodb://172.17.0.2:27017/house',{ useNewUrlParser: true } )
 // mongoose.connect('mongodb://localhost:27017/house',{ useNewUrlParser: true } )
 
 var descSchema = mongoose.Schema({
