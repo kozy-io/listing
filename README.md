@@ -31,7 +31,7 @@ Creates listing information(general description and amenity) at the given listin
 **Parameters**: Listing ID
 
 **Query String**:
-- Please see ___ for all available field options
+- Please see ___ for all available field options [TODO] Add a link to the schema doc
 
 Given the listing ID, update the specified description field.
 
@@ -39,7 +39,7 @@ Given the listing ID, update the specified description field.
 **Parameters**: Listing ID
 
 **Query String**:
-- Please see ___ for all available field options
+- Please see ___ for all available field options [TODO] Add a link to the schema doc
 
 Given the listing ID, update the specified amenity information field.
 
