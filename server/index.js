@@ -22,7 +22,6 @@ app.get('/listing/desc/:listingID',(req,res)=>{
         if(err){
             res.status(500).send(err);
         } else {
-            console.log(data)
             if (data.length) {
                 res.json(data[0])
             } else {
