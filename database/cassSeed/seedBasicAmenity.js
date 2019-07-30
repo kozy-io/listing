@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const writer = fs.createWriteStream('../cassCsv/basicAmenity.csv');
+const writer = fs.createWriteStream('../cassCSV/basicAmenity.csv');
 
 const randomBoolean = (percentTrue) => {
   return Math.floor(Math.random() * 100) + 1 <= percentTrue;
@@ -80,7 +80,7 @@ const generateBasicAmenity = (listingId) => {
 }
 
 const seedBasicAmenity = (callback) => {
-  let i = 100;
+  let i = 10000000;
   writer.write(`listingId,itemId,itemInfo\n`);
   const write = () => {
     let ok = true;

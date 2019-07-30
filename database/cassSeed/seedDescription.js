@@ -2,7 +2,7 @@ const faker = require('faker');
 const fs = require('fs');
 const helper = require('./seedHelper.js');
 
-const writer = fs.createWriteStream('../cassCsv/description.csv');
+const writer = fs.createWriteStream('../cassCSV/description.csv');
 
 const randomBoolean = (percentTrue) => {
   return Math.floor(Math.random() * 100) + 1 <= percentTrue;
@@ -70,7 +70,7 @@ const generateDescription = (listingId) => {
 }
 
 const seedDescription = (callback) => {
-  let i = 100;
+  let i = 10000000;
   writer.write(`listingId,userName,userPic,descItem,descItemInfo\n`);
   const write = () => {
     let ok = true;
