@@ -1,7 +1,7 @@
 const faker = require('faker');
 const fs = require('fs');
 
-const writer = fs.createWriteStream('../csv/user.csv');
+const writer = fs.createWriteStream('../csvPostgres/user.csv');
 
 const generateUserInfo = () => {
   userName = faker.name.firstName();

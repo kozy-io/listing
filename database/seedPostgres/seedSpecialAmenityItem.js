@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const writer = fs.createWriteStream('../csv/specialAmenityItem.csv');
+const writer = fs.createWriteStream('../csvPostgres/specialAmenityItem.csv');
 
 const generateSpecialAmenityItem = () => {
   const specialAmenityItem = ['Breakfast', 'Coffee Maker', 'Refrigerator', 'Dishwasher', 'Oven', 'Private entrance', 'Private livingroom', 'Bed linens', 'Extra pillows and blankets', 'Hair dryer', 'Hangers', 'Lock on bedroom door', 'Shampoo', 'BBQ grill', 'Patio or balcony', 'Garden or backyard', 'First aid kit', 'Fire extinguisher', 'Carbon monoxide detector', 'Smoke detector', 'Elevator', 'Free Parking On Premises', 'Gym', 'Hot Tub', 'Pool', 'Bathtub', 'Babysitter Recommendations', 'Crib'];

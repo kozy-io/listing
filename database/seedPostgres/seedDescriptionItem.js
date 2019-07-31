@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const writer = fs.createWriteStream('../csv/descriptionItem.csv');
+const writer = fs.createWriteStream('../csvPostgres/descriptionItem.csv');
 
 const generateDescriptionItem = () => {
   const descriptionItem = ['Title', 'Location', 'BedroomNum', 'BathroomNum', 'Bed Types', 'Bed Number', 'Guest Number', 'Room Type', 'Room Highlight', 'Location Highlight', 'Owner Highlight', 'Clean Highlight', 'License Or Registartion Number', 'General', 'Guest Access', 'Interation With Guests', 'The Space', 'Other Things To Note'];

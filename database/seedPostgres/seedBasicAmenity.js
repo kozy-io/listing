@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const writer = fs.createWriteStream('../csv/basicAmenity.csv');
+const writer = fs.createWriteStream('../csvPostgres/basicAmenity.csv');
 
 const randomBoolean = (percentTrue) => {
   return Math.floor(Math.random() * 100) + 1 <= percentTrue;

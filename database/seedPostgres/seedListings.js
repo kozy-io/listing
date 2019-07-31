@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const writer = fs.createWriteStream('../csv/listing.csv');
+const writer = fs.createWriteStream('../csvPostgres/listing.csv');
 
 const generateListing = () => {
   return `${Math.floor(Math.random() * 10000000) + 1}\n`;

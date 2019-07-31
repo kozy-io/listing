@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const writer = fs.createWriteStream('../csv/basicAmenityItem.csv');
+const writer = fs.createWriteStream('../csvPostgres/basicAmenityItem.csv');
 
 const generateBasicAmenityItem = () => {
   const amenityItem = ['Wifi', 'TV', 'Cable TV', 'Kitchen', 'Iron', 'Dryer', 'Washer', 'Hangers', 'Essentials', 'Laptop Friendly Workspace', 'Hot Water', 'Air Conditioning'];

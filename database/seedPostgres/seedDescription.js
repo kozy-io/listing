@@ -2,7 +2,7 @@ const faker = require('faker');
 const fs = require('fs');
 const helper = require('./seedHelper.js');
 
-const writer = fs.createWriteStream('../csv/description.csv');
+const writer = fs.createWriteStream('../csvPostgres/description.csv');
 
 const randomBoolean = (percentTrue) => {
   return Math.floor(Math.random() * 100) + 1 <= percentTrue;

@@ -1,7 +1,7 @@
 const faker = require('faker');
 const fs = require('fs');
 
-const writer = fs.createWriteStream('../csv/specialAmenity.csv');
+const writer = fs.createWriteStream('../csvPostgres/specialAmenity.csv');
 
 const randomBoolean = (percentTrue) => {
   return Math.floor(Math.random() * 100) + 1 <= percentTrue;
