@@ -66,3 +66,8 @@ COPY listings (userId) from '/Users/jonathan/hrsf/kozy.io/listing/database/csvPo
 COPY description (listingId, itemId, itemInfo) from '/Users/jonathan/hrsf/kozy.io/listing/database/csvPostgres/description.csv' DELIMITER ',' CSV HEADER;
 COPY basicAmenity (listingId, itemId, itemInfo) from '/Users/jonathan/hrsf/kozy.io/listing/database/csvPostgres/basicAmenity.csv' DELIMITER ',' CSV HEADER;
 COPY specialAmenity (listingId, itemId, itemInfo) from '/Users/jonathan/hrsf/kozy.io/listing/database/csvPostgres/specialAmenity.csv' DELIMITER ',' CSV HEADER;
+
+CREATE index idx_userId ON listings(userId);
+CREATE index idx_desc_listingId ON description(listingId);
+CREATE index idx_b_amen_listingId ON basicAmenity(listingId);
+CREATE index idx_s_amen_listingId ON specialAmenity(listingId);
