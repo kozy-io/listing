@@ -1,0 +1,16 @@
+config:
+  target: 'http://localhost:3000'
+  processor: './artilleryFunc.js'
+  phases:
+    - duration: 60
+      arrivalRate: 100
+  ensure:
+    p95: 2000
+scenarios:
+  - flow:
+    - function: 'generateGetRequestData'
+    - loop:
+      - get:
+          url: '/listing/desc/{{listingId}}'
+      - think: 10
+      count: 15

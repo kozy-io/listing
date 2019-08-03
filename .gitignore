@@ -1,3 +1,4 @@
 node_modules
 database/csvPostgres
 database/cassCSV
+newrelic_agent.log
