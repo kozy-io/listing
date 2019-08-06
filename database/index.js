@@ -1,44 +1,78 @@
-//database
+const cassandra = require('cassandra-driver');
+const redis = require('./redisConnection');
+const distance = cassandra.types.distance;
 
-
-const mongoose = require('mongoose');
-// mongoose.connect('mongodb://database:27017/house',{ useNewUrlParser: true } )
-// mongoose.connect('mongodb://172.17.0.2:27017/house',{ useNewUrlParser: true } )
-mongoose.connect('mongodb://localhost:27017/house',{ useNewUrlParser: true } )
-
-var descSchema = mongoose.Schema({
-    id: {type:Number, uniqe:true},
-    title: String,
-    location: String,
-    host: {},
-    detail:{},
-    highlights: {},
-    desc: {},
+const client = new cassandra.Client({
+  contactPoints: ['localhost'],
+  localDataCenter: 'datacenter1',
+  keyspace: 'kozy',
+  pooling: {
+    coreConnectionsPerHost: {
+      [distance.local] : 2,
+      [distance.remote] : 1
+    },
+    maxRequestsPerConnection: 1000
+  }
 });
 
-var Desc = mongoose.model('Desc',descSchema);
+const getDescription = (id, callback) => {
+  let query = `SELECT * FROM description WHERE listingid=${id}`;
 
+  redis.get(query, (err, result) => {
+    if (result) {
+      callback(null, result);
+    } else {
+      client.execute(query, (err, result) => {
+        if (err) {
+          callback(err);
+        } else {
+          redis.setex(query, 1600, JSON.stringify(result.rows));
+          callback(null, result.rows);
+        }
+      });
+    }
+  });
 
-var amenitySchema = mongoose.Schema({
-    id: {type:Number, uniqe:true},
-    amenities: {}
-});
-var Amenity = mongoose.model('Amenity',amenitySchema);
-
-var findDesc = (num, callback) =>{
-    Desc.find({id:num})
-        .exec((err,data)=>{
-            callback(err,data)
-        })
+  // client.execute(query, (err, result) => {
+  //   if (err) {
+  //     callback(err);
+  //   } else {
+  //     callback(null, result.rows);
+  //   }
+  // });
 }
-var findAmen = (num, callback) =>{
-    Amenity.find({id:num})
-        .exec((err,data)=>{
-            callback(err,data)
-        })
+
+const getBasicAmenity = (id, callback) => {
+  client.execute(`SELECT * FROM basisAmenity WHERE listingid=${id}`, (err, result) => {
+    if (err){
+      callback(err)
+    } else {
+      callback(null, result.rows);
+    }
+    // Run next function in series
+  });
 }
-module.exports.Desc = Desc;
-module.exports.Amenity = Amenity;
-module.exports.findDesc = findDesc;
-module.exports.findAmen = findAmen;
-module.exports.mongoose = mongoose;
+
+const getSpecialAmenity = (id, callback) => {
+  client.execute(`SELECT * FROM description WHERE listingid=${id}`, (err, result) => {
+    if (err){
+      callback(err)
+    } else {
+      callback(null, result.rows);
+    }
+    // Run next function in series
+  });
+}
+
+const updateDescription = () => {
+  
+}
+
+const updateBasicAmenity = () => {
+  
+}
+
+
+module.exports.getDescription = getDescription;
+module.exports.getBasicAmenity = getBasicAmenity;
+module.exports.getSpecialAmenity = getSpecialAmenity;
