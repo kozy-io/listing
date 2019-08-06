@@ -41,7 +41,8 @@
     "mongoose": "^5.6.4",
     "nodemon": "^1.19.1",
     "pg": "^7.11.0",
-    "pg-format": "^1.0.4"
+    "pg-format": "^1.0.4",
+    "redis": "^2.8.0"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
@@ -53,6 +54,7 @@
     "css-loader": "^3.1.0",
     "csv-writer": "^1.5.0",
     "jquery": "^3.4.1",
+    "morgan": "^1.9.1",
     "newrelic": "^5.11.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
