@@ -3,64 +3,48 @@
 
 ## API Server Routes
 
-| HTTP Method   | Endpoint                           | Description                                       |
-|:--------------|:-----------------------------------|:--------------------------------------------------|
-| GET           | /booking/reserved/:restaurantID    | Return unavailable times for booking              |
-| GET           | /booking/count/:restaurantID       | Return daily booking count                        |
-| POST          | /booking/:restaurantID             | Create a new reservation                          |
-| PUT           | /booking/:reservationID            | Update an existing reservation                    |
-| DELETE        | /booking/:reservationID            | Cancel a reservation                              |
+| HTTP Method   | Endpoint                           | Description                                              |
+|:--------------|:-----------------------------------|:---------------------------------------------------------|
+| GET           | /listing/desc/:listingID           | Return detail description of the listing                 |
+| GET           | /listing/amenity/:listingID        | Return amenity information of the listing                |
+| POST          | /listing/:listingID                | Add description and amenity information for a listing    |
+| PUT           | /listing/desc/:listingID           | Update description of an existing listing                |
+| PUT           | /listing/amentiy/:listingID        | Update amenity information of an existing listing        |
+| DELETE        | /listing/:listingID                | delete description and amenity information for a listing |
 
-#### `GET /booking/reserved/:restaurantID?year=YEAR&month=MONTH&day=DAY&party=SIZE&time=TIME`
-**Parameters**: Restaurant ID
+#### `GET /listing/desc/:listingID`
+**Parameters**: Listing ID
 
-**Query String**:
-- Date requested (YYYY-MM-DD)
-- Party size
-- Time
+Given a specific listing ID, this request will send back detail description about listing (e.g title, location).
 
-Given a specific restaurant ID, a specific date, and a specific party size, this request will send back times that are unavailable for booking within 2.5 hours of the time provided.
+#### `GET /listing/amenity/:listingID`
+**Parameters**: Listing ID
 
-#### `GET /booking/count/:restaurantID`
-**Parameters**: Restaurant ID
+Given a specific listing ID, the response will send back amenity information about listing (e.g wifi, washer).
 
-Given a specific restaurant ID, the response will include the number of bookings that have been made at the restaurant for the current day.
+#### `POST /listing/:listingID`
+**Parameters**: Listing ID
 
-#### `POST /booking/:restaurantID?year=YEAR&month=MONTH&day=DAY&party=SIZE&time=TIME`
-**Parameters**: Restaurant ID
+Creates listing information(general description and amenity) at the given listing ID.
 
-**Query String**:
-- Date requested (YYYY-MM-DD)
-- Party size
-- Time
-
-Creates a reservation at the given restaurant ID, for the given date, and for the given party size
-This assumes that the date is available for booking (the date should be held)
-
-#### `PUT /booking/:reservationID?year=YEAR&month=MONTH&day=DAY&party=SIZE&time=TIME`
-**Parameters**: Reservation ID
+#### `PUT /listing/desc/:listingID?[field]`
+**Parameters**: Listing ID
 
 **Query String**:
-- New date requested (YYYY-MM-DD)
-- New party size 
-- New time
+- Please see ___ for all available field options [TODO] Add a link to the schema doc
 
-Given the reservation ID, updates the existing reservation to the desired date, time, and party size.
+Given the listing ID, update the specified description field.
+
+#### `PUT /listing/amenity/:listingID?[field]`
+**Parameters**: Listing ID
+
+**Query String**:
+- Please see ___ for all available field options [TODO] Add a link to the schema doc
+
+Given the listing ID, update the specified amenity information field.
 
 #### `DELETE /booking/:reservationID`
-**Parameters**: Reservation ID
+**Parameters**: Listing ID
 
 Given the reservation ID, cancels the reservation and removes it from the reserved time.
 
-
-
-
-
-
-
-| Name             | Type          | Description                                                            |
-| ---------------- |:-------------:| :----------------------------------------------------------------------|
-| `restaurantId`   | `integer`     | *Required.* Restaurant identifier for the targeted restaruant.         |
-| `sort`           | `string`      | Sorts the results of your query by ascending `post date`, or decending `overall rating`, or decending `overall rating`. Default: descending `post date`.                                             |
-| `keyword`        | `string`      | Filter reviews of the restaurant by keyword(s).                        |
-| `star`           | `integer`     | Filter reviews of the restaurant by star(s).                           |
