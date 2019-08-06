@@ -1,7 +1,12 @@
-DROP TABLE kozy.description;
-DROP TABLE kozy.basicAmenity;
-DROP TABLE kozy.specialAmenity;
+CREATE KEYSPACE kozy IF NOT EXISTS
+  WITH REPLICATION = {
+    'class' : 'SimpleStrategy',
+    'replication_factor' : 1
+    }
 
+DROP TABLE IF EXISTS kozy.description;
+DROP TABLE IF EXISTS kozy.basicAmenity;
+DROP TABLE IF EXISTS kozy.specialAmenity;
 
 CREATE TABLE IF NOT EXISTS kozy.description (
   listingId int,
