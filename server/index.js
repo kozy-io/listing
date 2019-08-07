@@ -61,5 +61,19 @@ app.get('/:listingID/special-amen', (req, res) => {
   });
 });
 
+app.post('/:listingID/desc', (req, res) => {
+  let id = req.params.listingID;
+  let newDesc = req.body;
+  console.log(newDesc);
+  db.addDescription(id, newDesc, (err, result) => {
+    if (err) {
+      res.status(500).send(err);
+    } else {
+      console.log(result);
+      res.status(200).send(result);
+    }
+  });
+});
+
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 module.exports = app;
