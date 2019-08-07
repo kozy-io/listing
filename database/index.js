@@ -1,5 +1,4 @@
 const cassandra = require('cassandra-driver');
-const redis = require('./redisConnection');
 const distance = cassandra.types.distance;
 
 const client = new cassandra.Client({
@@ -16,30 +15,13 @@ const client = new cassandra.Client({
 });
 
 const getDescription = (id, callback) => {
-  let query = `SELECT * FROM description WHERE listingid=${id}`;
-
-  redis.get(query, (err, result) => {
-    if (result) {
-      callback(null, result);
+  client.execute(`SELECT * FROM description WHERE listingid=${id}`, (err, result) => {
+    if (err) {
+      callback(err);
     } else {
-      client.execute(query, (err, result) => {
-        if (err) {
-          callback(err);
-        } else {
-          redis.setex(query, 1600, JSON.stringify(result.rows));
-          callback(null, result.rows);
-        }
-      });
+      callback(null, result.rows);
     }
   });
-
-  // client.execute(query, (err, result) => {
-  //   if (err) {
-  //     callback(err);
-  //   } else {
-  //     callback(null, result.rows);
-  //   }
-  // });
 }
 
 const getBasicAmenity = (id, callback) => {
@@ -49,7 +31,6 @@ const getBasicAmenity = (id, callback) => {
     } else {
       callback(null, result.rows);
     }
-    // Run next function in series
   });
 }
 
@@ -60,7 +41,6 @@ const getSpecialAmenity = (id, callback) => {
     } else {
       callback(null, result.rows);
     }
-    // Run next function in series
   });
 }
 
