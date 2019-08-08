@@ -25,7 +25,7 @@ app.get('/:listingID/desc', (req, res) => {
       if (data.length) {
         res.status(200).json(data);
       } else {
-        res.status(500);
+        res.status(500).send('No records found');
       }
     }        
   })
