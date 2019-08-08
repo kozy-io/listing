@@ -16,9 +16,24 @@ app.use('/:listingID', expressStaticGzip('public', {
     }
  }));
  
-app.get('/listing/desc/:listingID', (req, res) => {
-  var id = req.params.listingID
+app.get('/:listingID/desc', (req, res) => {
+  let id = req.params.listingID;
   db.getDescription(id, (err, data) => {
+    if (err) {
+      res.status(500).send(err);
+    } else {
+      if (data.length) {
+        res.status(200).json(data);
+      } else {
+        res.status(500).send('No records found');
+      }
+    }        
+  })
+});
+
+app.get('/:listingID/basic-amen/', (req, res) => {
+  let id = req.params.listingID;
+  db.getBasicAmenity(id, (err, data) => {
     if (err) {
       res.status(500).send(err);
     } else {
@@ -27,8 +42,37 @@ app.get('/listing/desc/:listingID', (req, res) => {
       } else {
         res.status(500);
       }
-    }        
-  })
+    }
+  });
+});
+
+app.get('/:listingID/special-amen', (req, res) => {
+  let id = req.params.listingID;
+  db.getSpecialAmenity(id, (err, data) => {
+    if (err) {
+      res.status(500).send(err);
+    } else {
+      if (data.length) {
+        res.status(200).json(data);
+      } else {
+        res.status(500);
+      }
+    }
+  });
+});
+
+app.post('/:listingID/desc', (req, res) => {
+  let id = req.params.listingID;
+  let newDesc = req.body;
+  console.log(newDesc);
+  db.addDescription(id, newDesc, (err, result) => {
+    if (err) {
+      res.status(500).send(err);
+    } else {
+      console.log(result);
+      res.status(200).send(result);
+    }
+  });
 });
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
