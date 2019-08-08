@@ -5,7 +5,9 @@ const bodyParser = require('body-parser');
 const db = require('../database')
 const port = 3000;
 const expressStaticGzip = require('express-static-gzip');
+const morgan = require('morgan');
 
+app.use(morgan());
 app.use(bodyParser.json());
 // app.use('/:listingID',express.static("public"));
 app.use('/:listingID', expressStaticGzip('public', {
