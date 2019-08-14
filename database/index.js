@@ -2,8 +2,9 @@ const cassandra = require('cassandra-driver');
 const distance = cassandra.types.distance;
 
 const client = new cassandra.Client({
-  contactPoints: ['3.16.149.53'],
-  localDataCenter: 'datacenter1',
+  contactPoints: ['18.216.72.250', '13.59.102.186', '18.221.72.88'],
+  // contactPoints: ['localhost'],
+  localDataCenter: 'us-east-2',
   keyspace: 'kozy',
   pooling: {
     coreConnectionsPerHost: {
@@ -26,7 +27,7 @@ const getDescription = (id, callback) => {
 }
 
 const getBasicAmenity = (id, callback) => {
-  let query = `SELECT * FROM basisAmenity WHERE listingid=${id}`;
+  let query = `SELECT * FROM basicamenity WHERE listingid=${id}`;
   client.execute(query, (err, result) => {
     if (err) {
       callback(err)
@@ -37,7 +38,7 @@ const getBasicAmenity = (id, callback) => {
 }
 
 const getSpecialAmenity = (id, callback) => {
-  let query = `SELECT * FROM description WHERE listingid=${id}`;
+  let query = `SELECT * FROM specialamenity WHERE listingid=${id}`;
   client.execute(query, (err, result) => {
     if (err) {
       callback(err)

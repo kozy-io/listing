@@ -1,9 +1,3 @@
-CREATE KEYSPACE kozy IF NOT EXISTS
-  WITH REPLICATION = {
-    'class' : 'SimpleStrategy',
-    'replication_factor' : 1
-    }
-
 DROP TABLE IF EXISTS kozy.description;
 DROP TABLE IF EXISTS kozy.basicAmenity;
 DROP TABLE IF EXISTS kozy.specialAmenity;
@@ -32,6 +26,10 @@ CREATE TABLE IF NOT EXISTS kozy.specialAmenity (
   PRIMARY KEY (listingId, amenityItem) 
 );
 
-COPY kozy.description (listingId, hostName, hostPic, descriptionItem, descriptionInfo) from '/Users/jonathan/hrsf/kozy.io/listing/database/cassCSV/description.csv' WITH DELIMITER=',' AND HEADER=TRUE;
-COPY kozy.basicAmenity (listingId, amenityItem, amenityInfo) from '/Users/jonathan/hrsf/kozy.io/listing/database/cassCSV/basicAmenity.csv' WITH DELIMITER=',' AND HEADER=TRUE;
-COPY kozy.specialAmenity (listingId, category, amenityItem, amenityInfo) from '/Users/jonathan/hrsf/kozy.io/listing/database/cassCSV/specialAmenity.csv' WITH DELIMITER=',' AND HEADER=TRUE;
+COPY kozy.description (listingId, hostName, hostPic, descriptionItem, descriptionInfo) from '/tmp/description.csv' WITH DELIMITER=',' AND HEADER=TRUE;
+COPY kozy.basicAmenity (listingId, amenityItem, amenityInfo) from '/tmp/basicAmenity.csv' WITH DELIMITER=',' AND HEADER=TRUE;
+COPY kozy.specialAmenity (listingId, category, amenityItem, amenityInfo) from '/tmp/specialAmenity.csv' WITH DELIMITER=',' AND HEADER=TRUE;
+-- COPY kozy.description (listingId, hostName, hostPic, descriptionItem, descriptionInfo) from '/Users/jonathan/hrsf/kozy.io/listing/database/cassCSV/description.csv' WITH DELIMITER=',' AND HEADER=TRUE;
+-- COPY kozy.basicAmenity (listingId, amenityItem, amenityInfo) from '/Users/jonathan/hrsf/kozy.io/listing/database/cassCSV/basicAmenity.csv' WITH DELIMITER=',' AND HEADER=TRUE;
+-- COPY kozy.specialAmenity (listingId, category, amenityItem, amenityInfo) from '/Users/jonathan/hrsf/kozy.io/listing/database/cassCSV/specialAmenity.csv' WITH DELIMITER=',' AND HEADER=TRUE;
+-- cqlsh < schema.cql

@@ -22,6 +22,7 @@ app.get('/:listingID/desc', (req, res) => {
   let id = req.params.listingID;
   db.getDescription(id, (err, data) => {
     if (err) {
+      console.log(err);
       res.status(500).send(err);
     } else {
       if (data.length) {
@@ -33,10 +34,11 @@ app.get('/:listingID/desc', (req, res) => {
   })
 });
 
-app.get('/:listingID/basic-amen/', (req, res) => {
+app.get('/:listingID/basic-amen', (req, res) => {
   let id = req.params.listingID;
   db.getBasicAmenity(id, (err, data) => {
     if (err) {
+      console.log(err);
       res.status(500).send(err);
     } else {
       if (data.length) {
@@ -52,6 +54,7 @@ app.get('/:listingID/special-amen', (req, res) => {
   let id = req.params.listingID;
   db.getSpecialAmenity(id, (err, data) => {
     if (err) {
+      console.log(err);
       res.status(500).send(err);
     } else {
       if (data.length) {
